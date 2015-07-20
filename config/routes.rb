@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
 
-   devise_for :users, controllers: {
-        sessions: 'users/sessions'
-      }
+  devise_for :users
   root 'static_pages#home'
   get 'static_pages/home'
   get 'static_pages/help'
+
+  namespace :admin do
+    root 'pages#index'
+    resources :articles
+
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

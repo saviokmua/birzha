@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title,: MyString
+  cd: MyString
+  /home/savio/www/WEBUI-101/app/views/layouts: MyString
+
+two:
+  title,: MyString
+  cd: MyString
+  /home/savio/www/WEBUI-101/app/views/layouts: MyString
