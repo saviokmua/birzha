@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :articles
     resources :status
     resources :category
+    resources :auction
 
   end
 
