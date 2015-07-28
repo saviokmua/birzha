@@ -36,8 +36,8 @@ class Admin::ArticlesController < AdminController
 	if @article.update(article_params)
   		
       if @article.news
-        redirect_to admin_articles_path 
         flash[:success] = 'Запис успішно збережений'
+        redirect_to admin_articles_path 
       else
         flash.now[:success] = 'Запис успішно збережений'
         render 'edit' if !@article.news

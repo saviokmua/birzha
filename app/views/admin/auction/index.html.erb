@@ -1,0 +1,23 @@
+<h2>Аукціони</h2>
+<%= will_paginate @auctions %>
+<table class="table table-striped table-bordered">
+<tr>
+  <td style="width:20px">№</td>
+  <td>Назва</td>
+  <td style="width:200px"><%= link_to "Додати", new_admin_auction_path, :class => 'btn' %></td> 
+</tr>
+
+<% i = @start_num %>
+<% @auctions.each do |a| %>
+<tr>
+<td><%= i += 1 %></td>
+<td><%= a.name %></td>
+<td>
+  <%= link_to "Show", admin_auction_path(a) %>
+  <%= link_to "Edit", edit_admin_auction_path(a) %>
+  <%= link_to "Destroy", admin_auction_path(a), :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+</td>
+</tr>
+<% end %>
+</table>
+<%= will_paginate @auctions %>

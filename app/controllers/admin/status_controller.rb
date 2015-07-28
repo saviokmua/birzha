@@ -44,7 +44,10 @@ class Admin::StatusController < AdminController
   	if @status.destroy
   		flash[:notice] = 'Знищено запис'
       redirect_to admin_status_index_path
-  	end
+  	else
+      flash[:error]=@status.errors.full_messages.join(',')
+      redirect_to admin_status_index_path
+    end 
   end
 
 

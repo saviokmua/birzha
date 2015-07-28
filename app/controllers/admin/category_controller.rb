@@ -44,7 +44,12 @@ class Admin::CategoryController < AdminController
   	if @category.destroy
   		flash[:notice] = 'Знищено запис'
       redirect_to admin_category_index_path
-  	end
+  	else
+      flash[:error]=@category.errors.full_messages.join(',')
+      #obj=@category
+      redirect_to admin_category_index_path 
+    end
+
   end
 
 
