@@ -1,10 +1,27 @@
 <h2>Аукціони</h2>
-<%= will_paginate @auctions %>
+<%= bootstrap_form_for :search, layout: :inline, method: "get",html: {id: "auction_search"} do |f| %>
+    <%= f.text_field :name, value: params[:search][:name] , placeholder: "Пошук за назвою", label: "Назва" %>
+   
+   <%= f.collection_select :category_id, Category.all, :id, :name, {selected: params[:search][:category_id], label: "Категорія", include_blank: "Виберіть категорію"}  %>
+
+   <%= f.collection_select :status_id, Status.all, :id, :name, {selected:  params[:search][:status_id], label: "Статус", include_blank: "Виберіть статус"}  %>
+    
+    <%= f.hidden_field :order, value: params[:search][:order] %>
+    <%= f.hidden_field :page, value: params[:page], name: "page" %>
+
+  <%= f.submit 'Пошук' %>
+
+<br><br>
+ <span class="ui-icon ui-icon-carat-2-n-s">11</span>
 <table class="table table-striped table-bordered">
 <tr>
   <td style="width:20px">№</td>
-  <td>Назва</td>
-  <td style="width:200px"><%= link_to "Додати", new_admin_auction_path, :class => 'btn' %></td> 
+  <td><%= link_order "Назва",:name,params[:search][:order] %></td>
+  <td><%= link_order "Дата проведення",:started_at,params[:search][:order] %></td>
+  <td><%= link_order "Категорія","categories.name",params[:search][:order] %></td>
+  <td><%= link_order "Статус","statuses.name",params[:search][:order] %></td>
+  <td><%= link_order "Ціна,грн",:cina,params[:search][:order] %></td>
+  <td style="width:80px"><%= link_to bootstrap_icon(:add), new_admin_auction_path, :class => 'btn' %></td> 
 </tr>
 
 <% i = @start_num %>
@@ -12,12 +29,17 @@
 <tr>
 <td><%= i += 1 %></td>
 <td><%= a.name %></td>
+<td><%= a.started_at_date %></td>
+<td><%= a.category.name %></td>
+<td><%= a.status.name %></td>
+<td><%= a.cina %></td>
 <td>
-  <%= link_to "Show", admin_auction_path(a) %>
-  <%= link_to "Edit", edit_admin_auction_path(a) %>
-  <%= link_to "Destroy", admin_auction_path(a), :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+  <%= link_to bootstrap_icon(:show), admin_auction_path(a) %>
+  <%= link_to bootstrap_icon(:edit), edit_admin_auction_path(a) %>
+  <%= link_to bootstrap_icon(:destroy), admin_auction_path(a), :method => :delete, :data => { :confirm => 'Are you sure?' } %>
 </td>
 </tr>
 <% end %>
 </table>
 <%= will_paginate @auctions %>
+<% end %>

@@ -1,4 +1,4 @@
+<h2>Створеня статусу</h2>
 <%= bootstrap_form_for(@status,url: admin_status_index_path) do |f| %>
-  <%= f.text_field :name %>
-  <%= f.submit " Зберегти " %>
+<%= render partial: "admin/status/form_edit", locals: {f: f} %>
 <% end %>

@@ -1,0 +1,15 @@
+  <%= f.text_field :name, label: "Назва" %>
+  <%= f.date_select :started_at, label: "Дата проведення" %>
+   <%= f.collection_select :category_id, Category.all, :id, :name,  {label: "Категорія", prompt: "Виберіть категорію"}  %>
+   <%= f.collection_select :status_id, Status.all, :id, :name,  {label: "Статус", prompt: "Виберіть статус"}  %>
+  <% if @auction.filename.present? %>
+  <div class="auction_file">
+  <%= link_to "#{@auction.filename_origin}",'/auction/download/'+@auction.id.to_s %>
+  <%= link_to 'Delete',admin_auction_file_path(@auction),  remote: true, method: :delete,  data: {confirm: "Знищити файл?"}, class: 'auction_delete_file' %>
+</div>
+  <% end %>
+
+  <%= f.file_field :file,{label: "Новий файл", prompt: "Виберіть файл"} %>
+
+   <%= f.text_field :cina, label: "Ціна" %>
+  <%= f.submit " Зберегти " %>

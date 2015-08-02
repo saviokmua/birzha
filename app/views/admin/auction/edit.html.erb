@@ -1,8 +1,4 @@
+<h2>Редагування аукціону</h2>
 <%= bootstrap_form_for(@auction,url: admin_auction_path) do |f| %>
-  <%= f.text_field :name, label: "Назва" %>
-  <%= f.date_select :started_at, label: "Дата проведення" %>
-   <%= f.collection_select :category_id, Category.all, :id, :name,  {label: "Категорія", prompt: "Виберіть категорію"}  %>
-   <%= f.collection_select :status_id, Status.all, :id, :name,  {label: "Статус", prompt: "Виберіть статус"}  %>
-   <%= f.text_field :cina, label: "Ціна" %>
-  <%= f.submit " Зберегти " %>
+<%= render partial: "admin/auction/form_edit", locals: {f: f} %>
 <% end %>

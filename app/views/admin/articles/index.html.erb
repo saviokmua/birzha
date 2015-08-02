@@ -4,7 +4,7 @@
 <tr>
 	<td style="width:20px">№</td>
 	<td>Назва</td>
-	<td style="width:200px"><%= link_to "Додати", new_admin_article_path, :class => 'btn' %></td>	
+	<td style="width:80px"><%= link_to bootstrap_icon(:add), new_admin_article_path, :class => 'btn' %></td>	
 
 </tr>
 
@@ -14,9 +14,9 @@
 <td><%= i += 1 %></td>
 <td><%= a.title %></td>
 <td>
-	<%= link_to "Show", admin_article_path(a) %>
-	<%= link_to "Edit", edit_admin_article_path(a) %>
-	<%= link_to "Destroy", admin_article_path(a), :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+	<%= link_to bootstrap_icon(:show), admin_article_path(a) %>
+	<%= link_to bootstrap_icon(:edit), edit_admin_article_path(a) %>
+	<%= link_to bootstrap_icon(:destroy), admin_article_path(a), :method => :delete, :data => { :confirm => 'Знищити?' } %>
 </td>
 </tr>
 <% end %>

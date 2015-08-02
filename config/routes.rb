@@ -4,13 +4,17 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'static_pages/home'
   get 'static_pages/help'
+  get 'auction/download/:id' => 'admin/auction#file_download'
 
   namespace :admin do
     root 'pages#index'
     resources :articles
     resources :status
     resources :category
-    resources :auction
+    resources :auction do
+      delete "file" => "auction#file_destroy"
+
+    end
 
   end
 

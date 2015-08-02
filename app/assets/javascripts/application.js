@@ -15,3 +15,15 @@
 //= require bootstrap.min
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+  
+  /**
+  set order type and submit search form
+  */
+  $('.form_search_order').on('click',function() {
+    form_id=$(this).closest('form').attr('id');
+    $("#search_order").val($(this).data('order'));
+    $('#'+form_id).submit();
+  })
+})

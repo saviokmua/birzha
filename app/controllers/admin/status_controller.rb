@@ -1,6 +1,7 @@
 class Admin::StatusController < AdminController
+  before_action :get_status, only: [:edit,:update,:destroy]
+
   def index
-  	#@articles = Article.all
   	per_page = 15
   	params[:page]||=1
   	@start_num = (per_page.to_i * (params[:page].to_i-1)).to_i
@@ -22,25 +23,17 @@ class Admin::StatusController < AdminController
   	end
   end
 
-  def edit
-  	@status = Status.find_by(id: params[:id])
-  end
-
   def update
-	@status = Status.find_by(id: params[:id])  	
-	if @status.update(status_params)
+		if @status.update(status_params)
         redirect_to admin_status_index_path 
         flash[:success] = 'Запис успішно збережений'
   	else
   		flash[:error] = 'Помилка збереження запису'
       render 'edit'
   	end
-
-
   end
 
   def destroy
-  	@status = Status.find_by(id: params[:id])
   	if @status.destroy
   		flash[:notice] = 'Знищено запис'
       redirect_to admin_status_index_path
@@ -50,12 +43,13 @@ class Admin::StatusController < AdminController
     end 
   end
 
-
-
 private
- def status_params
-      params.require(:status).permit(:name)
+  def status_params
+    params.require(:status).permit(:name,:documents)
  end
 
+ def get_status
+    @status = Status.find(params[:id])    
+ end
 
 end
