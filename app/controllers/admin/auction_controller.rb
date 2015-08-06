@@ -5,7 +5,7 @@ class Admin::AuctionController < AdminController
 
 
   def index
-   	per_page = 4
+   	per_page = 25
   	params[:page]||=1
   	@start_num = (per_page.to_i * (params[:page].to_i-1)).to_i
     @auctions = Auction.search(params[:search]).paginate(page: params[:page], per_page: per_page).includes(:status).includes(:category).order(params[:search][:order])

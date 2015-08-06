@@ -1,0 +1,23 @@
+,,,,,,
+,партіали,,,find_by – вертає nil (якщо нічого не знайдено),,
+,proc,,,Find – вертає виключення,,
+,lambda,,,,,
+,,,,,,
+,,,,,,
+,,,,Тернальний оператор,,
+,,,,if boolean?,,
+,,,,    do_one_thing,,
+,,,,  else,,
+,,,,    do_something_else,,
+,,,,  end,,
+,,,,,,
+,,,,,,
+,,,,boolean? ? do_one_thing : do_something_else,,
+,,,,,,
+,,,,,,
+,Робимо нову вітку,,,,,
+,git checkout -b following-users,,,,,
+,,,,,,
+,"add_index :relationships, :follower_id
+add_index :relationships, :followed_id
+add_index :relationships, [:follower_id, :followed_id], unique: true",,,,,задаємо унікальність полів таблиці(третій рядок)
