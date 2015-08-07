@@ -1,43 +1,185 @@
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Про біржу</a></li>
-            <li><a href="#about">Законодавство</a></li>
-            <li><a href="#contact">Новини</a></li>
-            <li><a href="#contact">Зворотній зв'язок</a></li>
-            <li><a href="#contact">Контакти</a></li>
+   <div class="row">
+        <div class="span3">
+        
+          <!-- // Logo // -->
+          <%= link_to (image_tag "logo.png", class: "responsive-img"), :root, id: "logo"%>
 
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Торги <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#contact">Електронні біржові торги</a></li>
-                <li><a href="#contact">Аукціон з неоробленої деривини</a></li>
-                <li><a href="#contact">Торги і Аукціони</a></li>
+        </div><!-- end .span3 -->
+        <div class="span9">
+        
+                  <!-- // Mobile menu trigger // -->
+                  <a href="#" id="mobile-menu-trigger">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    
+          <!-- // Menu // -->
+          <ul class="sf-menu" id="menu">
+            <li class="current">
+                          <a href="index.html">Home</a>
+                            <ul>
+                <li>
+                                  <a href="index.html">Home</a>
+                </li>
+                <li>
+                                  <a href="index-2.html">Home 2</a>
+                                </li>
+                <li>
+                                  <a href="index-3.html">Home 3</a>
+                                </li>
               </ul>
             </li>
+            <li>
+                          <a href="about-us.html">Pages</a>
+              <ul>
+                <li>
+                                  <a href="about-us.html">About us</a>
+                </li>
+                <li>
+                                  <a href="about-me.html">About me</a>
+                                </li>
+                                <li>
+                                  <a href="team.html">Team</a>
+                                </li>
+                <li>
+                                  <a href="services.html">Services</a>
+                                </li>
+                                <li>
+                                  <a href="single-service.html">Single service</a>
+                                </li>
+                                 <li>
+                                  <a href="single-service-2.html">Single service 2</a>
+                                </li>
+                                <li>
+                                  <a href="page-404.html">404 page</a>
+                                </li>
+                                <li>
+                                  <a href="page-with-sidebar.html">Page with sidebar</a>
+                                </li>
+                                <li>
+                                  <a href="full-with-page.html">Full width page</a>
+                                </li>
+              </ul>
+            </li>
+                        <li>
+                          <a href="#">Features</a>
+                            <ul>
+                <li>
+                                  <a href="typography.html">Typography</a>
+                </li>
+                <li>
+                                  <a href="responsive-grid.html">Responsive Grid</a>
+                                </li>
+                                <li>
+                                  <a href="sliders.html">Sliders</a>
+                                </li>
+                                <li>
+                                  <a href="accordion-toggles.html">Accordion and Toggles</a>
+                                </li>
+                                <li>
+                                  <a href="alerts-notifications.html">Alerts and Notifications</a>
+                                </li>
+                                <li>
+                                  <a href="buttons.html">Buttons</a>
+                                </li>
+                                <li>
+                                  <a href="callout-box.html">Callout box</a>
+                                </li>
+                                <li>
+                                  <a href="custom-list.html">Custom List</a>
+                                </li>
+                                <li>
+                                  <a href="dividers.html">Dividers</a>
+                                </li>
+                                <li>
+                                  <a href="google-maps.html">Google maps</a>
+                                </li>
+                                <li>
+                                  <a href="headlines.html">Headlines</a>
+                                </li>
+                                <li>
+                                  <a href="icon-boxes.html">Icon Boxes</a>
+                                </li>
+                                <li>
+                                  <a href="page-sections.html">Page sections</a>
+                                </li>
+                                <li>
+                                  <a href="parallax-backgrounds.html">Parallax backgrounds</a>
+                                </li>
+                                <li>
+                                  <a href="pricing-tables.html">Pricing and data tables</a>
+                                </li>
+                                <li>
+                                  <a href="process-builder.html">Process builder</a>
+                                </li>
+                                <li>
+                                  <a href="progress-bars-pie-charts-milestones.html">Progress bars, Pie Charts and Milestones</a>
+                                </li>
+                                <li>
+                                  <a href="social-media.html">Social Media</a>
+                                </li>
+                                <li>
+                                  <a href="tabs.html">Tabs</a>
+                                </li>
+                <li>
+                                  <a href="#">3rd level dropdown</a>
+                  <ul>
+                    <li>
+                                          <a href="#">3rd level</a>
+                                        </li>
+                    <li>
+                                          <a href="#">dropdown</a>
+                                        </li>
+                    <li>
+                                          <a href="#">example</a>
+                                        </li>
+                  </ul>
+                </li>
+              </ul>
+                        </li>
+            <li>
+                          <a href="portfolio.html">Portfolio</a>
+                            <ul>
+                                <li>
+                                    <a href="portfolio.html">Portfolio</a>
+                                </li>
+                                <li>
+                                    <a href="portfolio-2.html">Portfolio 2</a>
+                                </li>
+                                <li>
+                                    <a href="portfolio-3.html">Portfolio 3</a>
+                                </li>
+                                <li>
+                                    <a href="portfolio-item.html">Portfolio item</a>
+                                </li>
+                            </ul>
+                        </li>
+            <li>
+                          <a href="blog.html">Blog</a>
+                            <ul>
+                                <li>
+                                    <a href="blog.html">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="blog-2.html">Blog 2</a>
+                                </li>
+                                <li>
+                                    <a href="blog-3.html">Blog 3</a>
+                                </li>
+                                <li>
+                                    <a href="blog-4.html">Blog 4</a>
+                                </li>
+                                <li>
+                                    <a href="blog-5.html">Blog 5</a>
+                                </li>
+                                <li>
+                                    <a href="blog-post.html">Blog post</a>
+                                </li>
+                            </ul>    
+                        </li>
+                        <li>
+                          <a href="contact.html">Contact</a>
+                        </li>
           </ul>
-          <% if user_signed_in? %>
-            <div style="margin-top:10px">
-            <span style="color:white">Вітаю, <%= current_user.email %></span>
-            <%= link_to 'Вийти', destroy_user_session_path, :method => :delete, :class => "btn btn-sm btn-primary", :type => 'btn'  %>
-          </div>
-          <% else %>
-            <div style="margin-top:10px">
-            <%= link_to 'Увійти', new_user_session_path, :class => "btn btn-sm btn-success", :type => 'btn' %> или 
-            <%= link_to 'Зареєструватися',new_user_registration_path, :class => "btn btn-sm btn-info", :type => 'btn' %>
-           </div>
-<% end %>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+
+        </div><!-- end .span9 -->
+      </div><!-- end .row -->   

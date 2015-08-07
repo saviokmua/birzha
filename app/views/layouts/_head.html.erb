@@ -1,14 +1,29 @@
-  <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><%= full_title(yield(:title)) %></title>
-  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
- 	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  	<%= csrf_meta_tags %>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,requiresActiveX=true">
+    
+    
+  <title><%= full_title(yield(:title)) %></title>
+  <meta name="description" content=" add description  ... ">
+    
+    <!-- /// Favicons ////////  -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="favicon.png">
+
+  <!-- /// Template CSS ////////  -->
+    <%= stylesheet_link_tag  "base","grid","elements","layout",
+     "revolutionslider/css/settings","revolutionslider/css/custom","bxslider/jquery.bxslider","magnificpopup/magnific-popup",
+     "http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700",
+     "iconfontcustom/iconfontcustom","fontawesome/font-awesome.min","animate/animate.min" %>
+  
+  <%= javascript_include_tag "jquery-2.1.0.min","viewport/jquery.viewport","easing/jquery.easing.1.3","simpleplaceholder/jquery.simpleplaceholder","fitvids/jquery.fitvids","superfish/hoverIntent","superfish/superfish","revolutionslider/pluginsources/jquery.themepunch.plugins.min","revolutionslider/js/jquery.themepunch.revolution.min","bxslider/jquery.bxslider.min","magnificpopup/jquery.magnific-popup.min",
+"parallax/jquery.parallax.min",
+"easypiechart/jquery.easypiechart.min",
+"easytabs/jquery.easytabs.min",
+"jqueryvalidate/jquery.validate.min",
+"jqueryform/jquery.form.min",
+"http://maps.google.com/maps/api/js?sensor=false",
+"gmap/jquery.gmap.min","plugins","scripts","modernizr-2.6.2.min"
+
+ %>

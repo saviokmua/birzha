@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+ <%= render "layouts/head" %>
+ 
+</head>
+<body>
+
+	<!--[if lte IE 8]>
+        <p class="browser-update">
+        	You are using an <strong>outdated</strong> browser. Please 
+        	<a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">upgrade your browser</a> 
+            to improve your experience.
+		</p>
+    <![endif]-->
+ 
+	<div id="wrap">
+    
+    	<div id="header-top">
+        
+        <!-- /// HEADER TOP  //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        
+            <div class="row">
+                <div class="span6" id="header-top-widget-area-1">
+                    
+                    <div class="widget widget_text">
+                    
+                        <div class="textwidget">
+                            <p class="last">
+                                Контактна інформація: тел/факс (0382)795-801, info@birzha.km.ua 
+                            </p>
+                        </div><!-- end .text -->
+                    
+                    </div><!-- end .widget_text -->
+                    
+                </div><!-- end .span6 -->
+                <div class="span6 text-right" id="header-top-widget-area-2">
+                    
+                    <div class="widget ewf_widget_social_media">
+                        	
+                        <div class="fixed">
+                            
+                            <a href="#" class="facebook-icon social-icon">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="#" class="twitter-icon social-icon">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#" class="googleplus-icon social-icon">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                            <a href="#" class="pinterest-icon social-icon">
+                                <i class="fa fa-pinterest"></i>
+                            </a>
+                            <a href="#" class="youtube-icon social-icon">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                            
+                        </div>
+                        
+                    </div><!-- end .widget_social_media -->
+                    
+                </div><!-- end .span6 -->
+            </div><!-- end .row -->
+            
+        <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            
+        </div><!-- end #header-top -->
+		<div id="header">
+        
+		<!-- /// HEADER  //////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            
+        <%= render "layouts/menu"%>
+		<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+		</div><!-- end #header -->
+		<div id="content">
+		
+		<!-- /// CONTENT  /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			
+            <%  render "layouts/slider" %>
+            <%  render "layouts/block_green" %>
+            
+             <div class="row">
+            	<div class="span4">
+                	
+                    <div class="icon-box-2">
+                    	
+                        <i class="ifc-flag_filled"></i>
+                        
+                        <div class="icon-box-content">
+                        	
+                            <h3 class="text-uppercase text-center">
+                            	<a href="#">Lorem ipsum dolor</a>
+                            </h3>
+                            
+                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus integer mus dignissim feugiat urna congue.</p>
+                            
+                        </div><!-- end .icon-box-content -->
+                        
+                    </div><!-- end .icon-box-2 -->
+                    
+                </div><!-- end .span4 -->
+                <div class="span4">
+                	
+                    <div class="icon-box-2">
+                    	
+                        <i class="ifc-idea_filled"></i>
+                        
+                        <div class="icon-box-content">
+                        	
+                            <h3 class="text-uppercase text-center">
+                            	<a href="#">Ipsum dolor sit amet</a>
+                            </h3>
+                            
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod incididunt ut labore et dolore magna aliqua ut enim ad.</p>
+                            
+                        </div><!-- end .icon-box-content -->
+                        
+                    </div><!-- end .icon-box-2 -->
+                    
+                </div><!-- end .span4 -->
+                <div class="span4">
+                	
+                    <div class="icon-box-2">
+                    	
+                        <i class="ifc-folder_filled"></i>
+                        
+                        <div class="icon-box-content">
+                        	
+                            <h3 class="text-uppercase text-center">
+                            	<a href="#">Dolor sit amet</a>
+                            </h3>
+                            
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod incididunt ut labore et dolore magna aliqua.</p>
+                            
+                        </div><!-- end .icon-box-content -->
+                        
+                    </div><!-- end .icon-box-2 -->
+                    
+                </div><!-- end .span4 -->
+            </div><!-- end .row -->
+            
+            <div class="row">
+            	<div class="span12">
+                	
+                    <h3 class="headline">
+                    	<span>Portfolio</span>
+                    </h3>
+                    
+                </div><!-- end .span12 -->
+            </div><!-- end .row -->
+            
+             <div class="row">
+            	<div class="span6">
+                	
+                    <div class="icon-box-1">
+                                    
+                        <i class="ifc-copy"></i>
+                        
+                        <div class="icon-box-content">
+                            
+                            <h2>
+                                <a href="#">This is awesome!</a>
+                            </h2>
+                            
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+                            incididunt. magna aliqua.</p>
+                        
+                        </div><!-- end .icon-box-content -->
+                        
+                    </div><!-- end .icon-box-1 -->
+                    
+                    <p class="hidden-tablet">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque 
+                    laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto 
+                    beatae vitae dicta sunt explicabo. </p>
+                    
+                    <p class="text-right">
+                    	<a class="btn btn-green-dark" href="#">read more</a>
+                    </p>
+                    
+                </div><!-- end .span6 -->
+                <div class="span6">
+                	
+                    <div class="portfolio-item">
+            
+                        <div class="portfolio-item-preview">			
+                        
+                            <a href="#">
+                               <%= image_tag "content/portfolio/460x265-2.png" %>
+                            </a>
+                            
+                            <div class="portfolio-item-overlay">
+                            
+                                <div class="portfolio-item-overlay-actions">
+                                    
+                                    <a class="magnificPopup-gallery portfolio-item-zoom" href="content/portfolio/460x265-2.png" title="zoom">
+                                        <i class="ifc-zoom_in"></i>
+                                    </a>
+                                    
+                                    <a class="portfolio-item-link" href="#" title="zoom">
+                                        <i class="ifc-link"></i>
+                                    </a>
+                                
+                                </div><!-- end .portfolio-item-overlay-actions -->
+                                
+                                <div class="portfolio-item-description hidden-tablet">
+                        
+                                    <h4 class="text-uppercase">Portfolio Item</h4>
+                                    <p>Description</p>
+                                
+                                </div><!-- end .portfolio-item-description -->
+                            
+                            </div><!-- end .portfolio-item-overlay -->
+                        
+                        </div><!-- end .portfolio-item-preview -->
+                        
+                    </div><!-- end .portfolio-item -->
+                    
+                </div><!-- end .span6 -->
+            </div><!-- end .row -->
+            
+            <div class="row">
+            	<div class="span3">
+                	
+                    <div class="portfolio-item">
+            
+                        <div class="portfolio-item-preview">			
+                        
+                            <a href="#">
+                                <%= image_tag "content/portfolio/220x217-1.png" %>
+                            </a>
+                            
+                            <div class="portfolio-item-overlay">
+                            
+                                <div class="portfolio-item-overlay-actions">
+                                    
+                                    <a class="magnificPopup-gallery portfolio-item-zoom" href="content/portfolio/220x217-1.png" title="zoom">
+                                        <i class="ifc-zoom_in"></i>
+                                    </a>
+                                    
+                                    <a class="portfolio-item-link" href="#" title="zoom">
+                                        <i class="ifc-link"></i>
+                                    </a>
+                                
+                                </div><!-- end .portfolio-item-overlay-actions -->
+                                
+                                <div class="portfolio-item-description hidden-tablet">
+                        
+                                    <h4 class="text-uppercase">Portfolio Item</h4>
+                                    <p>Description</p>
+                                
+                                </div><!-- end .portfolio-item-description -->
+                            
+                            </div><!-- end .portfolio-item-overlay -->
+                        
+                        </div><!-- end .portfolio-item-preview -->
+                        
+                    </div><!-- end .portfolio-item -->
+                    
+                </div><!-- end .span3 -->
+                <div class="span3">
+                	
+                    <div class="portfolio-item">
+            
+                        <div class="portfolio-item-preview">			
+                        
+                            <a href="#">
+                                <%= image_tag "content/portfolio/220x217-5.png" %>
+                            </a>
+                            
+                            <div class="portfolio-item-overlay">
+                            
+                                <div class="portfolio-item-overlay-actions">
+                                    
+                                    <a class="magnificPopup-gallery portfolio-item-zoom" href="content/portfolio/220x217-5.png" title="zoom">
+                                        <i class="ifc-zoom_in"></i>
+                                    </a>
+                                    
+                                    <a class="portfolio-item-link" href="#" title="zoom">
+                                        <i class="ifc-link"></i>
+                                    </a>
+                                
+                                </div><!-- end .portfolio-item-overlay-actions -->
+                                
+                                <div class="portfolio-item-description hidden-tablet">
+                        
+                                    <h4 class="text-uppercase">Portfolio Item</h4>
+                                    <p>Description</p>
+                                
+                                </div><!-- end .portfolio-item-description -->
+                            
+                            </div><!-- end .portfolio-item-overlay -->
+                        
+                        </div><!-- end .portfolio-item-preview -->
+                        
+                    </div><!-- end .portfolio-item -->
+                    
+                </div><!-- end .span3 -->
+                <div class="span3">
+                	
+                    <div class="portfolio-item">
+            
+                        <div class="portfolio-item-preview">			
+                        
+                            <a href="#">
+                                <%= image_tag "content/portfolio/220x217-2.png" %>
+                            </a>
+                            
+                            <div class="portfolio-item-overlay">
+                            
+                                <div class="portfolio-item-overlay-actions">
+                                    
+                                    <a class="magnificPopup-gallery portfolio-item-zoom" href="content/portfolio/220x217-2.png" title="zoom">
+                                        <i class="ifc-zoom_in"></i>
+                                    </a>
+                                    
+                                    <a class="portfolio-item-link" href="#" title="zoom">
+                                        <i class="ifc-link"></i>
+                                    </a>
+                                
+                                </div><!-- end .portfolio-item-overlay-actions -->
+                                
+                                <div class="portfolio-item-description hidden-tablet">
+                        
+                                    <h4 class="text-uppercase">Portfolio Item</h4>
+                                    <p>Description</p>
+                                
+                                </div><!-- end .portfolio-item-description -->
+                            
+                            </div><!-- end .portfolio-item-overlay -->
+                        
+                        </div><!-- end .portfolio-item-preview -->
+                        
+                    </div><!-- end .portfolio-item -->
+                    
+                </div><!-- end .span3 -->
+                <div class="span3">
+                	
+                    <div class="portfolio-item">
+            
+                        <div class="portfolio-item-preview">			
+                        
+                            <a href="#">
+                                <%= image_tag "content/portfolio/220x217-6.png" %>
+                            </a>
+                            
+                            <div class="portfolio-item-overlay">
+                            
+                                <div class="portfolio-item-overlay-actions">
+                                    
+                                    <a class="magnificPopup-gallery portfolio-item-zoom" href="content/portfolio/220x217-6.png" title="zoom">
+                                        <i class="ifc-zoom_in"></i>
+                                    </a>
+                                    
+                                    <a class="portfolio-item-link" href="#" title="zoom">
+                                        <i class="ifc-link"></i>
+                                    </a>
+                                
+                                </div><!-- end .portfolio-item-overlay-actions -->
+                                
+                                <div class="portfolio-item-description hidden-tablet">
+                        
+                                    <h4 class="text-uppercase">Portfolio Item</h4>
+                                    <p>Description</p>
+                                
+                                </div><!-- end .portfolio-item-description -->
+                            
+                            </div><!-- end .portfolio-item-overlay -->
+                        
+                        </div><!-- end .portfolio-item-preview -->
+                        
+                    </div><!-- end .portfolio-item -->
+                    
+                </div><!-- end .span3 -->
+            </div><!-- end .row -->
+			
+			<br><br>
+            
+            <div class="row">
+            	<div class="span8">
+                	
+                    <div class="icon-box-1">
+                                    
+                        <i class="ifc-brain_filled"></i>
+                        
+                        <div class="icon-box-content">
+                            
+                            <h2>
+                                <a href="#">Sapphire is the key to success</a>
+                            </h2>
+                            
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. </p>
+                        
+                        </div><!-- end .icon-box-content -->
+                        
+                    </div><!-- end .icon-box-1 -->
+                    
+                </div><!-- end .span8 -->
+            </div><!-- end .row -->
+            
+            <br>
+            
+            <div class="row">
+            	<div class="span5">
+                
+                	<p><%= image_tag "content/index/300x300.png", class: "responsive-img" %></p>
+                
+                </div><!-- end .span5 -->
+                <div class="span7">
+                
+                	<h2>Need Asistance?<br class="visible-phone"> Let us know!</h2>
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                    
+                    <ul class="check">	
+                    	<li>Sed ut perspiciatis unde omnis</li>
+                        <li>Nemo enim ipsam voluptatem voluptas aspernatur</li>
+                        <li>At vero eos et accusamus et iusto odio dignissimos </li>
+                        <li>Lorem ipsum dolor sit amet</li>
+                    </ul>
+                
+                </div><!-- end .span7 -->
+            </div><!-- end .row -->
+            
+            <br><br><br>
+            
+            <div class="box" style="background-image:image-url("content/backgrounds/bg-box-2.jpg");">
+            	
+                <div class="row">
+                	<div class="span12">
+                    	
+                        <br><br>
+                        
+                        <h1 class="text-center last">Who we&acute;ve <strong>worked</strong> with</h1>
+                        
+                        <br><br>
+                        
+                    </div><!-- end .span12 -->
+                </div><!-- end .row -->
+                
+                <div class="box-overlay">
+                	
+                    <div class="row">
+                        <div class="span12">
+                        
+                        	<br><br>
+                            
+                            <ul class="client-logo">
+                                <li>
+                                    <%= image_tag "content/index/logo/180x55-1.png" %>
+                                </li>
+                                <li>
+                                    <%= image_tag "content/index/logo/180x55-2.png" %>
+                                </li>
+                                <li>
+                                    <%= image_tag "content/index/logo/180x55-3.png" %>
+                                </li>
+                                <li>
+                                  <%= image_tag "content/index/logo/180x55-4.png" %>
+                                </li>
+                                <li>
+                                    <%= image_tag "content/index/logo/180x55-5.png" %>
+                                </li>
+                                <li>
+                                    <%= image_tag "content/index/logo/180x55-6.png" %>
+                                </li>
+                                <li class="hidden-tablet">
+                                    <%= image_tag "content/index/logo/180x55-7.png" %>
+                                </li>
+                                <li class="hidden-tablet">
+                                    <%= image_tag "content/index/logo/180x55-8.png" %>
+                                </li>
+                            </ul>
+
+                        </div><!-- end .span12 -->
+                    </div><!-- end. row -->
+                    
+                </div><!-- end .box-overlay -->
+                
+            </div><!-- end .box -->
+            
+            <div class="row">
+            	<div class="span8">
+                	
+                    <div class="icon-box-1">
+                                    
+                        <i class="ifc-user_male"></i>
+                        
+                        <div class="icon-box-content">
+                            
+                            <h3>
+                                <strong><a href="#">Retina Ready</a></strong>
+                            </h3>
+                            
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque 
+                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto 
+                            beatae vitae dicta sunt explicabo. </p>
+                        
+                        </div><!-- end .icon-box-content -->
+                        
+                    </div><!-- end .icon-box-1 -->
+                    
+                    <div class="icon-box-1">
+                                    
+                        <i class="ifc-upload_filled"></i>
+                        
+                        <div class="icon-box-content">
+                            
+                            <h3>
+                                <strong><a href="#">Optimized for Devices</a></strong>
+                            </h3>
+                            
+                            <p>Architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit 
+                            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p>
+                        
+                        </div><!-- end .icon-box-content -->
+                        
+                    </div><!-- end .icon-box-1 -->
+                    
+                    <div class="icon-box-1">
+                                    
+                        <i class="ifc-unlock"></i>
+                        
+                        <div class="icon-box-content">
+                            
+                            <h3>
+                                <strong><a href="#">Easy to Customize</a></strong>
+                            </h3>
+                            
+                            <p>Ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur 
+                            magni dolores eos qui ratione voluptatem sequi nesciunt</p>
+                        
+                        </div><!-- end .icon-box-content -->
+                        
+                    </div><!-- end .icon-box-1 -->
+                    
+                </div><!-- end .span8 -->
+                <div class="span4 text-right">
+                    <%= image_tag "content/index/245x375.png", class: "responsive-img" %>
+                </div><!-- end .span4 -->
+            </div><!-- end .row -->
+            
+            <br>
+            
+            <div class="box-2" style="margin-bottom:-50px;">
+            	
+                <div class="row">
+                	<div class="span12">
+                    
+                    	<ul class="timeline-2">
+                        	<li class="time">
+                            	2005
+                            </li>
+                            <li>
+                            	<i class="ifc-umbrella"></i>
+                                First Releaase
+                            </li>
+                            <li class="time">
+                            	2009
+                            </li>
+                            <li>
+                            	<i class="ifc-clock"></i>
+                                +500 Clients
+                            </li>
+                            <li class="time">
+                            	2011
+                            </li>
+                            <li>
+                            	<i class="ifc-student_filled"></i>
+                                IOS Launch
+                            </li>
+                            <li class="time">
+                            	2013
+                            </li>
+                            <li class="time">
+                            	2014
+                            </li>
+                        </ul>
+                    
+                    </div><!-- end .span12 -->
+                </div><!-- end .row -->
+                
+            </div><!-- end .box -->
+            
+		<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+		</div><!-- end #content -->
+		<div id="footer">
+		
+		<!-- /// FOOTER     ///////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			
+            <div id="footer-top">
+            
+            <!-- /// FOOTER TOP  //////////////////////////////////////////////////////////////////////////////////////////////////// -->
+                
+                <div class="row">
+                	<div class="span12" id="footer-top-widget-area-1">
+                    	
+                        <div class="widget widget_text">
+                    
+                            <div class="textwidget">
+                                
+                                <div class="row">
+                                	<div class="span9">
+                                    	
+                                        <h1 class="last">Want <strong>the best</strong> for your business?</h1>
+                                        
+                                    </div><!-- end .span9 -->
+                                    <div class="span3">
+                                    	
+                                        <a class="btn btn-black btn-large" href="#">Purchase <strong>Now!</strong></a>
+                                        
+                                    </div><!-- end .span3 -->
+                                </div><!-- end .row -->
+                                
+                            </div><!-- end .textwidget -->
+                            
+                        </div><!-- end .widget_text -->
+                        
+                    </div><!-- end .span12 -->
+                </div><!-- end .row -->
+            
+            <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            
+            </div><!-- end #footer-top -->  
+			<div id="footer-middle">
+            
+            <!-- /// FOOTER MIDDLE  //////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+                <div class="row">
+                    <div class="span3" id="footer-middle-widget-area-1">
+                        
+                        <div class="widget widget_text">
+                            
+                            <h3 class="widget-title">
+                                <span>About us</span>
+                            </h3>
+                        
+                            <div class="textwidget">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. 
+								 Estibulum non aliquam odio, vitae vehicula dolor. </p>
+                                <p class="last">Sed congue ligula nisi, id tempor nibh tempor molestie. Duis interdum neque
+								ligula, sit amet porttitor odio semper.</p>
+                            </div><!-- end .textwidget -->
+                            
+                        </div><!-- end .widget_text -->
+                        
+                    </div><!-- end .span3 -->
+                    <div class="span3" id="footer-middle-widget-area-2">
+                        
+                       <div class="widget ewf_widget_blog-post">
+                            
+                            <h3 class="widget-title">
+                                <span>Blog</span>
+                            </h3>
+                        
+                            <ul class="blog-post">
+                            	<li>
+                            	
+                                    <%= image_tag "content/footer/45x42-1.png" %>
+                                    
+                                    <p>
+                                        News 
+                                        <span>15.3.2014</span>
+                                    </p>
+                                    
+                                    <p>
+                                        <a href="#">Aliquam aliquam pellentesque elit vel accumsan</a>
+                                    </p>
+                                
+                                </li>
+                                <li>
+                            	
+                                    <%= image_tag "content/footer/45x42-2.png" %>
+                                    
+                                    <p>
+                                        Media 
+                                        <span>9.2.2014</span>
+                                    </p>
+                                    
+                                    <p>
+                                        <a href="#">Sed venenatis, nibh et commodo malesuada nibh</a>
+                                    </p>
+                                
+                                </li>
+                            </ul>
+                            
+                        </div><!-- end .widget_blog-post -->
+                        
+                    </div><!-- end .span3 -->
+                    <div class="span3" id="footer-middle-widget-area-3">
+                    	
+                        <div class="widget ewf_widget_contact_info">
+                            
+                            <h3 class="widget-title">
+                                <span>Contact</span>
+                            </h3>
+                        
+                            <address>
+                            	<strong>Sapphire Offices</strong><br>
+								121th Street North East<br>
+								Atlanta, GA 30309<br>
+								<br>
+                                Phone: (012) 345-6789<br>
+								Fax: (012) 456-7890<br> 
+                                E-mail: office@sapphire.com 
+                            </address>
+                            
+                        </div><!-- end .widget_contact_info -->
+                        
+                    </div><!-- end .span3 -->
+                    <div class="span3" id="footer-middle-widget-area-4">
+                        
+                        <div class="widget ewf_widget_newsletter">
+                            
+                            <h3 class="widget-title">
+                                <span>Newsletter</span>
+                            </h3>
+                        
+                            <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore aliqua. </p>
+                            
+                            <form id="newsletter-subscribe-form" action="#">
+                                <fieldset>
+                                    <input type="text" name="email" placeholder="email address...">
+                                    <input type="submit" name="submit" value="Go!">
+                                </fieldset>
+                            </form>
+                            
+                        </div><!-- end .widget_newsletter -->
+                        
+                    </div><!-- end .span3 -->
+                </div><!-- end .row -->
+                
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->    
+            
+            </div><!-- end #footer-middle -->
+            <div id="footer-bottom">
+            
+            <!-- /// FOOTER BOTTOM  ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            	
+                <div class="row">
+                	<div class="span6" id="footer-bottom-widget-area-1">
+                    
+						<div class="widget widget_text">
+                        
+                            <div class="textwidget">
+                                <p class="last">
+                                	<%= image_tag "logo.png", class: "responsive-img" %>
+                                    <span class="hidden-tablet hidden-phone">Copyright &copy; 2014 Sapphire INC</span>
+                                </p>
+                            </div><!-- end .textwidget -->
+                            
+                        </div><!-- end .widget_text -->
+                    
+                    </div><!-- end .span6 -->
+                    <div class="span6 text-right" id="footer-bottom-widget-area-2">
+                    
+						<div class="widget ewf_widget_social_media">
+                        	
+                            <div class="fixed">
+                            	
+                                <a href="#" class="facebook-icon social-icon">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                <a href="#" class="twitter-icon social-icon">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a href="#" class="googleplus-icon social-icon">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                                <a href="#" class="pinterest-icon social-icon">
+                                    <i class="fa fa-pinterest"></i>
+                                </a>
+                                <a href="#" class="youtube-icon social-icon">
+                                    <i class="fa fa-youtube"></i>
+                                </a>
+                                
+                            </div>
+                            
+                        </div><!-- end .widget_social_media -->
+                    
+                    </div><!-- end .span6 -->
+                </div><!-- end .row -->
+                
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            	
+            </div><!-- end #footer-bottom -->
+            
+		<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+		</div><!-- end #footer -->
+		
+	</div><!-- end #wrap -->
+
+
+
+</body>
+</html>
