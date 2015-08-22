@@ -12,7 +12,12 @@
 <% @articles.each do |a| %>
 <tr>
 <td><%= i += 1 %></td>
-<td><%= a.title %></td>
+<td><%= unless a.auction_enable 
+    a.title 
+  else 
+    "<span class='italic'>Пререліз: <span>".html_safe+a.auction.name
+  end %>
+</td>
 <td>
 	<%= link_to bootstrap_icon(:show), admin_article_path(a) %>
 	<%= link_to bootstrap_icon(:edit), edit_admin_article_path(a) %>

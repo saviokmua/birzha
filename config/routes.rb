@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get 'static_pages/home'
   get 'static_pages/help'
   get 'auction/download/:id' => 'admin/auction#file_download'
+  resources :articles, only: [:index,:show]
+  
+  get '/elfinder_manager', to: 'elfinder#index'
+  match 'elfinder' => 'elfinder#elfinder', via: [:get, :post]
 
   namespace :admin do
     root 'pages#index'
@@ -17,6 +21,8 @@ Rails.application.routes.draw do
     end
 
   end
+
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,31 @@
+<!-- /// CONTENT  /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+      
+            <div id="page-header">
+              
+                <div class="row">
+                  <div class="span12">
+                      
+                        <h2>Новини</h2>
+                        
+                    </div><!-- end .span12 -->
+                </div><!-- end .row -->
+                
+            </div><!-- end #page-header -->
+      
+
+<% @articles.each do |a| %>
+<div class="row">
+
+    <div class="span12">
+        <h3 class="headline" style="margin-bottom: 5px;">
+            <span><%= article_link a %></span>
+        </h3>
+        <%= article_content a %>
+
+    </div>
+    
+</div>
+<br>
+<% end %>
+<%= will_paginate @articles %>
+    <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->

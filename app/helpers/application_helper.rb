@@ -62,5 +62,30 @@ def bootstrap_icon(type)
       raw("<span class=\"glyphicon glyphicon-#{action}\" aria-hidden=\"true\"></span>")
   end
 
+def article_title(article)
+  if article.auction_enable
+    article.auction.name
+  else
+    article.title
+  end
+end
+
+def article_content(article)
+  if article.auction_enable
+    article.auction.started_at_date.to_s+" проводиться аукціон з реалізація майна. Детальна інформація "
+  else
+    article.content
+  end
+end
+
+def article_link(article)
+  unless article.auction_enable
+    link_to article_title(article), article_path(article)
+  else
+    link_to article_title(article), '#'
+    #auction_path(article.auction)
+  end
+end
+
 
 end

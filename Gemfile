@@ -11,6 +11,12 @@ gem 'bootstrap-will_paginate'
 
 gem 'bootstrap_form'
 gem 'devise'
+gem "select2-rails"
+#gem 'tinymce-rails'
+#gem 'tinymce-rails-langs'
+gem 'ckeditor'
+gem 'el_finder', '1.1.12'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -22,6 +28,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

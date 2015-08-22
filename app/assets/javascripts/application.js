@@ -13,11 +13,27 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.min
+//= require select2
+//= require select2_locale_"uk"
 //= require turbolinks
-//= require_tree .
+//= require ckeditor/init
 
-$(document).ready(function() {
+
+$(document).ready(function() {  
+
+
+})
   
+  function auction_enable(){
+  $('.auction_enable').on('click',function(){
+    
+    $( ".auction_id" ).toggle();
+    $( ".content" ).toggle();
+
+  })
+}
+
+function form_search_order(){
   /**
   set order type and submit search form
   */
@@ -26,4 +42,10 @@ $(document).ready(function() {
     $("#search_order").val($(this).data('order'));
     $('#'+form_id).submit();
   })
-})
+}
+
+$(document).ready(auction_enable);
+$(document).on('page:load', auction_enable);
+$(document).ready(form_search_order);
+$(document).on('page:load', form_search_order);
+

@@ -12,17 +12,27 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><%= link_to "Про біржу", edit_admin_article_path(1) %></li>
-            <li><%= link_to "Законодавство", edit_admin_article_path(2) %></li>
+            
+
             <li><%= link_to "Новини", admin_articles_path %></li>
-            <li><a href="#contact">Зворотній зв'язок</a></li>
-            <li><%= link_to "Контакти", edit_admin_article_path(3) %></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Торги <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Сторінки<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#containerct">Електронні біржові торги</a></li>
-                <li><a href="#contact">Аукціон з неоробленої деривини</a></li>
-                <li><%= link_to "Торги і Аукціони",admin_auction_index_path %></li>
+                <li><%= link_to "Про біржу", edit_admin_article_path(1) %></li>
+                <li><%= link_to "Законодавство", edit_admin_article_path(2) %></li>
+                <li><%= link_to "Експертна оцінка майна", edit_admin_article_path(4) %></li>
+                <li><a href="#contact">Зворотній зв'язок</a></li>
+
+                <li><%= link_to "Контакти", edit_admin_article_path(3) %></li>                
+              </ul>
+              </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Торги і Аукціони<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="disabled"><%= link_to "Електронні біржові торги",'#' %></li>
+                <li><%= link_to "Аукціон з неоробленої деривини","#" %></li>
+                <li><%= link_to "Біржовий бюлетень",admin_auction_index_path %></li>
                 <li><%= link_to "Статуси", admin_status_index_path %></li>
                 <li><%= link_to "Категорії", admin_category_index_path %></li>
               </ul>
@@ -38,7 +48,7 @@
             <%= link_to 'Увійти', new_user_session_path, :class => "btn btn-sm btn-success", :type => 'btn' %> или 
             <%= link_to 'Зареєструватися',new_user_registration_path, :class => "btn btn-sm btn-info", :type => 'btn' %>
            </div>
-<% end %>
+          <% end %>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
