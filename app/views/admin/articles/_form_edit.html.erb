@@ -1,10 +1,10 @@
   <%= f.text_field :title, label: "Назва", wrapper: { class: "auction_id " + ("none " if f.object.auction_enable).to_s }  %>
-  <%= f.check_box :auction_enable, label: "Пререліз аукціону", class: "auction_enable " if f.object.news %>
+  <%= f.check_box :auction_enable, label: "Пререліз аукціону", class: "auction_enable " %>
   
-  <%= f.collection_select :auction_id, @auctions,:id, :name, {label: "Лот аукціону", prompt: "<Виберіть аукціон>"}, wrapper: {class: "auction_id " + ( "inline " if f.object.auction_enable).to_s + ("none " unless f.object.auction_enable).to_s } if f.object.news %>
+  <%= f.collection_select :auction_id, @auctions,:id, :name, {label: "Лот аукціону", prompt: "<Виберіть аукціон>"}, wrapper: {class: "auction_id " + ( "inline " if f.object.auction_enable).to_s + ("none " unless f.object.auction_enable).to_s }  %>
   
   <div class="<%= "content " + ( "inline " unless f.object.auction_enable ).to_s + ( "none " if f.object.auction_enable).to_s %>" >
-  <%= f.cktext_area :content, label: "Текст", rows: 20, :ckeditor => {:language => 'uk'} %>
+  <%= f.label :content, "Текст" %>
+  <%= f.cktext_area :content, rows: 20, ckeditor: { language: 'uk' } %>
 </div>
-  <%= f.hidden_field :news %>
   <%= f.submit " Зберегти "%>

@@ -1,0 +1,36 @@
+<% provide(:title, @auction.name) %>
+<div id="page-header">
+  <div class="row">
+    <div class="span12">
+      <h2>Біржовий бюлетень</hs2>
+    </div>
+    <!-- end .span12 -->
+  </div><!-- end .row -->
+</div><!-- end #page-header -->
+
+<div class="row">
+  <div class="span12">
+    <h3 class="headline" style="margin-bottom: 5px;"><span><%= @auction.name %></span></h3>
+      <div class="span4">
+        <ul class="circle">
+          <li>Дата проведення торгів: <%= @auction.started_at_date %></li>
+          <li>Ціна: <%= "%.2f" % @auction.cina %> грн.</li>
+      
+          <% if @auction.filename.present? 
+              filename=Rails.root.join('public/uploads/',@auction.filename)
+              if File.file?(filename)
+          %>
+            <li>Детальна інформація: <%= link_to (image_tag((image_file_type filename),class:  "auction_download")), download_auction_path(@auction.id) %></li>
+          <% end
+          end %>
+          <% if @auction.status.documents.present? %>
+            <li>Перелік документів:<br>
+              <div><%= @auction.status.documents.html_safe %>
+            </li>
+          <% end %>
+        </ul>
+      </div>    
+    </div>
+  </div>
+<br>
+    

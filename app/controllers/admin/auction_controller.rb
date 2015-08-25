@@ -1,6 +1,6 @@
 class Admin::AuctionController < AdminController
 
-  before_action :get_auction, only: [:edit,:update,:file_download,:get_filename_origin]
+  before_action :get_auction, only: [:edit,:update,:get_filename_origin]
   before_action :get_order, only: [:index]
 
 
@@ -58,10 +58,6 @@ def file_destroy
       format.json 
     end    
   end
-
-def file_download
-  send_file(Rails.root.join('public', 'uploads',@auction.filename),filename: @auction.filename_origin)
-end
 
 private
 

@@ -1,4 +1,4 @@
-<% provide(:title, 'Новини') %>
+<% provide(:title, 'Біржовий бюлетень') %>
 <!-- /// CONTENT  /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
       
             <div id="page-header">
@@ -6,7 +6,7 @@
                 <div class="row">
                   <div class="span12">
                       
-                        <h2>Новини</h2>
+                        <h2>Біржовий бюлетень</h2>
                         
                     </div><!-- end .span12 -->
                 </div><!-- end .row -->
@@ -14,21 +14,24 @@
             </div><!-- end #page-header -->
       
 
-<% @articles.each do |a| %>
+<% @auctions.each do |a| %>
 <div class="row">
 
     <div class="span12">
         <h3 class="headline" style="margin-bottom: 5px;">
-            <span><%= article_link a %></span>
+            <span><%= link_to a.name,auction_path(a) %></span>
         </h3>
-        <div style="clear">
-          <%= (article_content a,true ).html_safe %>
+        <div class="span4">
+          <ul class="circle">
+            <li>Дата проведення торгів: <%= a.started_at_date %></li>
+            <li>Ціна: <%= "%.2f" % a.cina %> грн.</li>
+          </ul>
+          <%= link_to "Читати далі", auction_path(a.id), class: "btn btn-green-dark" %>
         </div>
-        <%= link_to "Читати далі", article_url(a) , class: "btn btn-green-dark" %>
     </div>
     
 </div>
 <br>
 <% end %>
-<%= will_paginate @articles %>
+<%= will_paginate @auctions %>
     <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->

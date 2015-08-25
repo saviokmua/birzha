@@ -22,28 +22,35 @@
                           <%= link_to "Новини", articles_path %>
                                        
             </li>
+            
+
             <li class="current">
-                          <%= link_to "Законодавство", %>
+                          <%= link_to "Законодавство", page_path(2) %>
                                       
             </li>
+
             <li class="current">
                           <%= link_to "Торги і аукціони", :root %>
                 <ul>
                   <li>
-                          <%= link_to "Торги", :root %>
-                  </li>
-                  <li>
-                          <%= link_to "Електронні біржові торги", :root %>
-                  </li>
-                  <li>
                           <%= link_to "Аукціон з необробленої деревини", :root %>
+                          <ul>
+                            <li><%= link_to "Результати аукціону з необробленої деревини", :root %></li>
+                          </ul>
                   </li>                  
+
+                  <li>
+                          <%= link_to "Біржовий бюлетень", auction_index_path %>
+                  </li>
+                  <li>
+                          <%= link_to "Електронні біржові торги", "/etorgy" %>
+                  </li>
 
                 </ul>
                                        
             </li>
             <li class="current">
-                          <%= link_to "Про Біржу", :root %>
+                          <%= link_to "Про Біржу", page_path(1) %>
                                        
             </li>
             <li class="current">

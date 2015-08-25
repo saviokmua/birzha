@@ -1,6 +1,6 @@
     <!-- Fixed navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
+      <div class="container"> 
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -12,26 +12,14 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            
-
             <li><%= link_to "Новини", admin_articles_path %></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Сторінки<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Про біржу", edit_admin_article_path(1) %></li>
-                <li><%= link_to "Законодавство", edit_admin_article_path(2) %></li>
-                <li><%= link_to "Експертна оцінка майна", edit_admin_article_path(4) %></li>
-                <li><a href="#contact">Зворотній зв'язок</a></li>
-
-                <li><%= link_to "Контакти", edit_admin_article_path(3) %></li>                
-              </ul>
-              </li>
-
+            <li><%= link_to "Сторінки", admin_pages_path %></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Торги і Аукціони<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li class="disabled"><%= link_to "Електронні біржові торги",'#' %></li>
                 <li><%= link_to "Аукціон з неоробленої деривини","#" %></li>
+                <li><%= link_to "Результати аукціону з неоробленої деривини","#" %></li>
                 <li><%= link_to "Біржовий бюлетень",admin_auction_index_path %></li>
                 <li><%= link_to "Статуси", admin_status_index_path %></li>
                 <li><%= link_to "Категорії", admin_category_index_path %></li>

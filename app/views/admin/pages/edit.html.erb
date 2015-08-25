@@ -1,0 +1,4 @@
+<h2>Редагування запису</h2>
+<%= bootstrap_form_for(@page,url: admin_page_path) do |f| %>
+<%= render partial: "admin/pages/form_edit", locals: {f: f} %>
+<% end %>

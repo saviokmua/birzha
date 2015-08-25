@@ -1,3 +1,4 @@
   <%= f.text_field :name, label: "Назва" %>
-  <%= f.text_area :documents, label: "Перелік документів", rows: 20 %>
+  <%= f.label :documents, "Перелік документів" %>
+  <%= f.cktext_area :documents, rows: 20, ckeditor: { language: 'uk' } %>
   <%= f.submit " Зберегти " %>

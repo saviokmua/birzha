@@ -4,26 +4,30 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'static_pages/home'
   get 'static_pages/help'
-  get 'auction/download/:id' => 'admin/auction#file_download'
+  get 'static_pages/indevelopment'
+  get '/etorgy', to: 'static_pages#indevelopment'
+
   resources :articles, only: [:index,:show]
-  
+  resources :pages, only: [:show]
+  resources :auction, only: [:index,:show,:download] do
+    member do
+      get "download"
+    end
+  end
+
   get '/elfinder_manager', to: 'elfinder#index'
   match 'elfinder' => 'elfinder#elfinder', via: [:get, :post]
 
   namespace :admin do
     root 'pages#index'
     resources :articles
+    resources :pages
     resources :status
     resources :category
     resources :auction do
       delete "file" => "auction#file_destroy"
-
     end
-
   end
-
-  
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

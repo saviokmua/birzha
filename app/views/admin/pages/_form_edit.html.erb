@@ -1,0 +1,5 @@
+  <%= f.text_field :title, label: "Назва"  %>
+  <%= f.label :content, "Текст" %>
+  <%= f.cktext_area :content, label: "Текст", rows: 20, ckeditor: { language: 'uk' } %>
+  <%= f.check_box :nodelete, label: "Заборонити знищення сторінки" %>
+  <%= f.submit " Зберегти "%>

@@ -4,7 +4,7 @@
    <%= f.collection_select :status_id, Status.all, :id, :name,  {label: "Статус", prompt: "Виберіть статус"}  %>
   <% if @auction.filename.present? %>
   <div class="auction_file">
-  <%= link_to "#{@auction.filename_origin}",'/auction/download/'+@auction.id.to_s %>
+  <%= link_to @auction.filename_origin,download_auction_path(@auction.id) %>
   <%= link_to 'Delete',admin_auction_file_path(@auction),  remote: true, method: :delete,  data: {confirm: "Знищити файл?"}, class: 'auction_delete_file' %>
 </div>
   <% end %>

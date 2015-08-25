@@ -6,6 +6,8 @@ CKEDITOR.editorConfig = function (config) {
   ];
   config.toolbar = "sample";
   config.filebrowserBrowseUrl = '/elfinder_manager';
+  config.extraPlugins = 'wpmore';
 
   // ... rest of the original config.js  ...
 }
+

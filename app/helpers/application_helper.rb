@@ -6,7 +6,7 @@ module ApplicationHelper
     if page_title.empty?
       base_title
     else
-      "#{base_title} | #{page_title}"
+      " #{page_title} | #{base_title} "
     end
   end
 
@@ -70,21 +70,50 @@ def article_title(article)
   end
 end
 
-def article_content(article)
+def article_content(article,preview=false)
   if article.auction_enable
     article.auction.started_at_date.to_s+" проводиться аукціон з реалізація майна. Детальна інформація "
   else
-    article.content
+    if preview
+      content=article.content.split("<!--more-->")
+      content=content[0].to_s.html_safe
+    else
+      article.content.html_safe
+    end
   end
 end
 
-def article_link(article)
-  unless article.auction_enable
-    link_to article_title(article), article_path(article)
-  else
-    link_to article_title(article), '#'
-    #auction_path(article.auction)
+
+
+def article_link(article,title="")
+  if title=""
+    title=article_title(article)
   end
+  link_to title, article_url(article)
+end
+
+def article_url(article)
+  unless article.auction_enable
+    article_path(article)
+  else
+    auction_path(article.auction.id)
+  end
+end
+
+
+
+def image_file_type (filename)
+  if File.file?(filename)
+    file_type=File.extname(filename)
+    type=Rails.root.join('public/images/files_type/',file_type[1..100]+'.png')
+    type_default='files_type/file.png'
+    if File.file?(type)
+      'files_type/'+file_type[1..100]+'.png'
+    else
+      type_default
+    end
+  end
+
 end
 
 
