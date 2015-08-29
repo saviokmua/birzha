@@ -100,8 +100,6 @@ def article_url(article)
   end
 end
 
-
-
 def image_file_type (filename)
   if File.file?(filename)
     file_type=File.extname(filename)
@@ -113,7 +111,33 @@ def image_file_type (filename)
       type_default
     end
   end
+end
 
+def page_title page_id
+  @page=Page.find_by(id: page_id)
+  unless @page.nil?
+    @page.title
+  else
+    "запис не знайдено"
+  end
+end
+
+def link_to_page page_id
+  link_to(page_title(page_id), page_path(page_id),target: "_blank")+("<br><br>").html_safe
+end
+
+def propoz propozs
+  res = ''
+  propozs.each do |propoz|
+    unless propoz.html.empty?
+      file_path||= Rails.root.join('public', 'uploads', 'propoz', propoz.filename) if propoz.filename.present?
+      file_html_path = Rails.root.join('public', 'uploads', 'propoz', propoz.html)
+      if File.file?(file_html_path)
+       res+= link_to(propoz.title,('download/propoz/'+propoz.html))+" "+(link_to("(Скачати)", 'download/propoz/'+propoz.filename) if File.file?(file_path.to_s)) + ("<br><br>").html_safe
+      end
+    end
+  end
+  res.html_safe
 end
 
 

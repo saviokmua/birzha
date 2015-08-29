@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   get 'static_pages/help'
   get 'static_pages/indevelopment'
   get '/etorgy', to: 'static_pages#indevelopment'
-
+  get '/untreatedwood', to: 'static_pages#untreated_wood'
+  get '/download/propoz/:filename', to: "static_pages#download_propoz"
+ 
+  resources :propoz, only: [:show]
   resources :articles, only: [:index,:show]
   resources :pages, only: [:show]
   resources :auction, only: [:index,:show,:download] do
@@ -27,6 +30,8 @@ Rails.application.routes.draw do
     resources :auction do
       delete "file" => "auction#file_destroy"
     end
+    resources :propoz
+    resources :result
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

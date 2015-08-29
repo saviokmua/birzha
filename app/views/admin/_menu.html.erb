@@ -18,13 +18,13 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Торги і Аукціони<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li class="disabled"><%= link_to "Електронні біржові торги",'#' %></li>
-                <li><%= link_to "Аукціон з неоробленої деривини","#" %></li>
-                <li><%= link_to "Результати аукціону з неоробленої деривини","#" %></li>
                 <li><%= link_to "Біржовий бюлетень",admin_auction_index_path %></li>
                 <li><%= link_to "Статуси", admin_status_index_path %></li>
                 <li><%= link_to "Категорії", admin_category_index_path %></li>
+                <li><%= link_to "Пропозиції з продажу необробленої деревини", admin_propoz_index_path %></li>
+                <li><%= link_to "Результати аукціону з неоробленої деривини", admin_result_index_path %></li>                
               </ul>
-              </li>
+            </li>
           </ul>
           <% if user_signed_in? %>
             <div style="margin-top:10px">

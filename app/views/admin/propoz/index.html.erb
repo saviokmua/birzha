@@ -1,0 +1,25 @@
+
+<h2>Пропозиції з продажу</h2>
+<%= will_paginate @propozs %>
+<table class="table table-striped table-bordered">
+<tr>
+	<td style="width:20px">№</td>
+	<td>Назва</td>
+	<td style="width:80px"><%= link_to bootstrap_icon(:add), new_admin_propoz_path, :class => 'btn' %></td>	
+</tr>
+
+<% i = @start_num %>
+<% @propozs.each do |p| %>
+<tr>
+<td><%= i += 1 %></td>
+<td><%= p.title %></td>
+<td>
+	<%= link_to bootstrap_icon(:show), admin_propoz_path(p) %>
+	<%= link_to bootstrap_icon(:edit), edit_admin_propoz_path(p) %>
+	<%= link_to bootstrap_icon(:destroy), admin_propoz_path(p), :method => :delete, :data => { :confirm => 'Знищити?' } %>
+</td>
+</tr>
+<% end %>
+
+</table>
+<%= will_paginate @propozs %>

@@ -1,0 +1,4 @@
+<h2>Пропозиції з продажу: створення нового запису</h2>
+<%= bootstrap_form_for(@propoz, url: admin_propoz_index_path) do |f| %>
+<%= render partial: "admin/propoz/form_edit", locals: {f: f} %>
+<% end %>
