@@ -4,18 +4,20 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-gem 'pg'
-gem 'will_paginate'
-gem 'bootstrap-will_paginate'
+gem 'sqlite3', '1.3.10'
+gem 'pg', '0.18.2'
+gem 'will_paginate', '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
 
-gem 'bootstrap_form'
-gem 'devise'
-gem "select2-rails"
+gem 'bootstrap_form', '2.3.0'
+gem 'devise', '3.5.1'
+gem "select2-rails", '3.5.9.3'
 #gem 'tinymce-rails'
 #gem 'tinymce-rails-langs'
-gem 'ckeditor'
+gem 'ckeditor', '4.1.3'
 gem 'el_finder', '1.1.12'
+gem 'active_attr', '0.8.5'
+gem 'settingslogic'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -27,10 +29,11 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
+gem 'jquery-rails', '4.0.4'
+gem 'jquery-ui-rails', '5.0.5'
+gem 'jquery-validation-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem 'turbolinks', '2.5.3'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.

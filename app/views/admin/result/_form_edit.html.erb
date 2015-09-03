@@ -1,0 +1,5 @@
+  <%= f.text_field :title, label: "Назва" %>
+  <%= f.date_select :date, label: "Дата проведення торгів" %>
+  <%= f.file_field :filename, { label: "Файл із результатами продаду", prompt: "Виберіть файл" } %>
+  <%= f.check_box :enable, label: "Показувати на сайті" %>
+  <%= f.submit " Зберегти "%>

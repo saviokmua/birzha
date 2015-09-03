@@ -1,0 +1,25 @@
+<% provide(:title, ("Зворотній зв'язок").html_safe ) %>
+<div id="page-header">
+  <div class="row">
+    <div class="span12">
+      <h2>Зворотній зв'язок</h2>
+    </div>
+    <!-- end .span12 -->
+  </div><!-- end .row -->
+</div><!-- end #page-header -->
+
+<div class="row">
+  <div class="span12">
+    <h3 class="headline" style="margin-bottom: 5px;"><span>Зворотній зв'язок</span></h3>
+      Шановні відвідувачі сайту,<br>
+на даній сторінці ви маєте можливість залишити свої повідомлення або задати ваші запитання, які будуть розглянуті фахівцями біржі.<br><br>
+
+Не забудьте вказати у повідомленні свій e-mail і контактний телефон.
+<br><br>
+<%= bootstrap_form_for(@feedback,:as => 'feedback',url: feedback_index_path) do |f| %>
+<%= render partial: "layouts/feedback", locals: {f: f} %>
+<% end %>
+    </div>
+  </div>
+<br>
+    

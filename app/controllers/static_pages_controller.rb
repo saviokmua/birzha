@@ -18,5 +18,4 @@ class StaticPagesController < ApplicationController
       send_file(Rails.root.join('public', 'uploads','propoz', filename),filename: filename)
   end
 
-
 end

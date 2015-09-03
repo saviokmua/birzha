@@ -1,0 +1,40 @@
+<% provide(:title, 'Результати з продажу необробленої деревини') %>
+<!-- /// CONTENT  /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+      
+            <div id="page-header">
+              
+                <div class="row">
+                  <div class="span12">
+                      
+                        <h2>Результати з продажу необробленої деревини</h2>
+                        
+                    </div><!-- end .span12 -->
+                </div><!-- end .row -->
+                
+            </div><!-- end #page-header -->
+      
+
+<% @results.each do |r| %>
+<div class="row">
+  <% unless r.html.empty? %>
+    <div class="span12">
+<%=
+      file_path||= Rails.root.join('public', 'uploads', 'result', r.filename) if r.filename.present?
+      file_html_path = Rails.root.join('public', 'uploads', 'result', r.html)
+      if File.file?(file_html_path)
+       link_to(("<b>" + r.date.to_s + "</b> - "+r.title).html_safe,('download/result/'+r.html))+" "+(link_to("(Скачати)", 'download/result/'+r.filename) if File.file?(file_path.to_s)) + ("<br><br>").html_safe
+      end
+%>
+
+
+
+    </div>
+  <% end %> 
+</div>
+<br>
+<% end %>
+<%= will_paginate @results %>
+    <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    
+

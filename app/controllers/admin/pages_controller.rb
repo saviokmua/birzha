@@ -3,7 +3,7 @@ class Admin::PagesController < AdminController
     per_page = 15
     params[:page]||=1
     @start_num = (per_page.to_i * (params[:page].to_i-1)).to_i
-    @pages = Page.paginate(page: params[:page], per_page: per_page).order('title DESC')
+    @pages = Page.paginate(page: params[:page], per_page: per_page).order('title')
   end
 
   def new
@@ -17,7 +17,7 @@ class Admin::PagesController < AdminController
       redirect_to admin_pages_path
     else
       flash[:error] = 'Помилка створення нового запису'
-      render page: :new
+      render :new
     end
   end
 

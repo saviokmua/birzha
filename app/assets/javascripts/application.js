@@ -17,12 +17,20 @@
 //= require select2_locale_"uk"
 //= require turbolinks
 //= require ckeditor/init
+//= require jquery.validate
+//= require jquery.validate.additional-methods
+//= require jquery.validate.localization/messages_uk
 
+$(document).ready(function () {
+$("#new_feedback").validate({
+debug: true,
+rules: {
+"feedback[name]": {required: true},
+"feedback[email]": {required: true, email: true},
+}
+});
+});
 
-$(document).ready(function() {  
-
-
-})
   
   function auction_enable(){
   $('.auction_enable').on('click',function(){
@@ -44,8 +52,18 @@ function form_search_order(){
   })
 }
 
+
+
+  function feedback_valid() {
+    
+    $("#new_feedback").validate();
+  };
+
+
+
 $(document).ready(auction_enable);
 $(document).on('page:load', auction_enable);
 $(document).ready(form_search_order);
 $(document).on('page:load', form_search_order);
+
 

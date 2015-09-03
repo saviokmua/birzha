@@ -1,0 +1,138 @@
+
+<!-- /// CONTENT  /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+      
+            <div id="page-header">
+              
+                <div class="row">
+                  <div class="span12">
+                      
+                        <h2>Контакти</h2>
+                        
+                    </div><!-- end .span12 -->
+                </div><!-- end .row -->
+                
+            </div><!-- end #page-header -->
+            
+            <div class="row">
+              <div class="span3">
+                  
+                    <div class="icon-box-1">
+                                      
+                        <i class="ifc-umbrella"></i>
+                        
+                        <div class="icon-box-content">
+                            
+                            <h3>Контакти</h3>
+                        
+                        </div><!-- end .icon-box-content -->
+                        
+                    </div><!-- end .icon-box-1 -->
+                    
+                     
+                    
+                    <address>
+                      <strong>Товарна Біржа "Подільська"</strong><br>
+                        29000 м. Хмельницький,<br>
+                        вул. Театральна, 10<br>
+                        тел.65-05-13, 70-20-73,<br>
+                        70-22-10, 70-22-11, <br>
+                        тел./факс 79-58-01<br>
+                        код 32452151 <br>
+                        р/р 2600001258208<br>
+                        МФО 325365 ХВ ЦФ ПАТ "Кредобанк"<br>
+                        Email: info@birhza.km.ua
+                    </address>
+                    
+                </div><!-- end .span3 -->
+                <div class="span9">
+                
+                  <h3>Зворотній зв'язок</h3>
+                    
+                    <br>
+                  
+                  <%= form_for(@feedback,:as => 'feedback',url: feedback_index_path) do |f| %>
+                        <fieldset>
+                            
+                            <div id="formstatus"></div>
+                          
+                            <div class="row">
+                              <div class="span3">
+                                
+                                <%= f.text_field :name, placeholder: "Ім'я" %>
+                                </div><!-- edd .span3 --> 
+                              <div class="span3">
+                                  <%= f.text_field :email, placeholder: "e-mail"  %>                             
+                                </div><!-- edd .span3 --> 
+                                <div class="span3">
+                                  <%= f.text_field :phone, placeholder: "Телефон" %>
+                                </div><!-- edd .span3 --> 
+                            </div><!-- end .row -->
+                            <%= f.text_area :text, placeholder: "Текст повідомлення", rows: 10, cols: 25, class: "span9"  %>                            
+                             <%= f.submit " Надіслати повідомлення ", class: "btn-green-dark float-right" %>
+                      </fieldset>
+                    <% end %>
+                </div><!-- end .span9 -->
+            </div><!-- end .row -->
+
+            <div class="row">
+              <div class="span12">
+                    <div class="social-media text-center" style="margin-bottom:-20px;">
+                        <a href="#" class="facebook-icon social-icon">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#" class="twitter-icon social-icon">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="pinterest-icon social-icon">
+                            <i class="fa fa-pinterest"></i>
+                        </a>
+                        <a href="#" class="googleplus-icon social-icon">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                        
+                    </div>
+                    
+                </div><!-- end .span12 -->
+            </div><!-- end .row -->
+            
+            <div class="google-map" style="margin-bottom:-80px;">
+    
+                <div class="map" id="google-map"></div>
+                
+                <div class="overlay top"></div>
+                <div class="overlay bottom"></div>
+                <div class="overlay left"></div>
+                <div class="overlay right"></div>
+                
+            </div><!-- end .google-map -->
+            
+    <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <script>
+    $(document).ready(function () {
+      $("#new_feedback").validate({
+        debug: true,
+        rules: {
+          "feedback[name]": {required: true},
+          "feedback[email]": {required: true, email: true},
+          "feedback[phone]": {required: true},
+          "feedback[text]": {required: true},
+        },
+        messages: {
+          "feedback[name]": "Введіть і'мя будь-ласка",
+          "feedback[email]": {
+            required:"Введіть e-mail будь-ласка",
+            email:"Введіть будь-ласка коректну e-mail адресу"
+            },
+          "feedback[text]": "Введіть будь-ласка текст повідомлення",
+          "feedback[phone]": "Введіть будь-ласка номер телефону"
+        }
+        });
+    });
+
+</script>
+
+<style>
+  .error {
+  color:red;
+}
+</style>

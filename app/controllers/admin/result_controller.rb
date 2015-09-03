@@ -9,7 +9,7 @@ def index
 end    
 
   def new
-    @result = Result.new(enable: true)
+    @result = Result.new(enable: true,title: "Результати з продажу необробленої деревини")
   end
 
   def create
@@ -36,47 +36,47 @@ end
 
   def update
 	result = Result.find_by(id: params[:id])  	
-	if propoz.update(propoz_params)
+	if result.update(result_params)
       flash[:success] = 'Запис успішно збережений'
       file_upload params[:id]
-      redirect_to admin_propoz_index_path 
+      redirect_to admin_result_index_path 
    	else
       flash[:error] = 'Помилка збереження запису'
-      render propoz: :edit
+      render result: :edit
   	end
   end
 
   def destroy
-    propoz = Propoz.find_by(id: params[:id])
-    filename = propoz.filename
-    if propoz.destroy
+    result = Result.find_by(id: params[:id])
+    filename = result.filename
+    if result.destroy
       flash[:notice] = 'Знищено запис'
       file_delete filename
     end
-    redirect_to admin_propoz_index_path
+    redirect_to admin_result_index_path
   end
 
 private
- def propoz_params
-  params.require(:propoz).permit(:title, :enable)
+ def result_params
+  params.require(:result).permit(:title, :enable, :date)
  end
 
 def file_upload id
-    propoz = Propoz.find_by(id: id)   
-    uploaded_io = params[:propoz][:filename]
+    result = Result.find_by(id: id)   
+    uploaded_io = params[:result][:filename]
     if uploaded_io.present? 
-      file_delete propoz.filename
-      filename = 'propoz_'+DateTime.now.strftime("%Y%m%d%H%M%S").to_s+File.extname(uploaded_io.original_filename).to_s
-      path = Rails.root.join('public', 'uploads', 'propoz')
-      filename_path = Rails.root.join('public', 'uploads', 'propoz', filename)
+      file_delete result.filename
+      filename = 'result_'+result.date.to_s+File.extname(uploaded_io.original_filename).to_s
+      path = Rails.root.join('public', 'uploads', 'result')
+      filename_path = Rails.root.join('public', 'uploads', 'result', filename)
       File.open(filename_path, 'wb') do |file|
        file.write(uploaded_io.read)
       end
-      propoz.update(filename: filename)
+      result.update(filename: filename)
       filename_html = convert_to_html filename_path,path
-      filename_path_html = Rails.root.join('public', 'uploads', 'propoz', filename_html)
+      filename_path_html = Rails.root.join('public', 'uploads', 'result', filename_html)
       if File.file?(filename_path_html)
-        propoz.update(html: filename_html)
+        result.update(html: filename_html)
       end
     end
 end
@@ -84,12 +84,11 @@ end
 def file_delete filename
     
     if filename.present?
-      file_path = Rails.root.join('public', 'uploads', 'propoz', filename)
+      file_path = Rails.root.join('public', 'uploads', 'result', filename)
       files=[]
       files << file_path
       files << (File.dirname(file_path).to_s + "/" + File.basename(file_path,'.*').to_s + '.html')
 
-      #puts YAML::dump(files)
       files.each do |f|
         if File.file?(f.to_s) 
           File.delete(f)

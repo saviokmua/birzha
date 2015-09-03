@@ -14,10 +14,23 @@
                     
           <!-- // Menu // -->
           <ul class="sf-menu" id="menu">
-            <li class="current">
-                          <%= link_to "Головна", :root %>
-                                       
+           <li class="current">
+                          <%= link_to "Про Біржу", page_path(1) %>
+                <ul>
+                  <li>
+                    <%= link_to "Керівництво", page_path(12) %>
+                  </li>
+
+                  <li>
+                    <%= link_to "Зворотній зв'язок", feedback_index_path %>
+                  </li>
+                  <li>
+                    <%= link_to "Контакти", '#' %>
+                  </li>
+              </ul>
             </li>
+
+
             <li class="current">
                           <%= link_to "Новини", articles_path %>
                                        
@@ -35,7 +48,7 @@
                   <li>
                           <%= link_to "Аукціон з необробленої деревини", "/untreatedwood" %>
                           <ul>
-                            <li><%= link_to "Результати аукціону з необробленої деревини", :root %></li>
+                            <li><%= link_to "Результати аукціону з необробленої деревини", result_index_path %></li>
                           </ul>
                   </li>                  
 
@@ -49,14 +62,12 @@
                 </ul>
                                        
             </li>
-            <li class="current">
-                          <%= link_to "Про Біржу", page_path(1) %>
                                        
-            </li>
+
             <li class="current">
-                          <%= link_to "Зворотній зв'язок", :root %>
-                                       
+                          <%= link_to "Експертна оцінка майна", page_path(3) %>
             </li>
+           
 
             
           </ul>

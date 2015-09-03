@@ -1,0 +1,4 @@
+<h2>Результати з продажу необробленої деревини: редагування запису</h2>
+<%= bootstrap_form_for(@result,url: admin_result_path) do |f| %>
+<%= render partial: "admin/result/form_edit", locals: {f: f} %>
+<% end %>
