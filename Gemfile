@@ -17,8 +17,9 @@ gem "select2-rails", '3.5.9.3'
 gem 'ckeditor', '4.1.3'
 gem 'el_finder', '1.1.12'
 gem 'active_attr', '0.8.5'
-gem 'settingslogic'
-
+#gem 'settingslogic'
+#gem 'rails-settings'
+gem 'mail'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

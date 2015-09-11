@@ -636,11 +636,13 @@
 				transform: translateY(0); 
 	}
 				
-	/* Portfolio Pagination */
+	/* Portfolio Pagination */ 
 	
 	.pagination {
-		float: right;
+		
 		list-style: none;
+    width: 50%;
+    margin: 0 auto;
 	}
 	
 	.pagination li { 
@@ -664,6 +666,13 @@
 		border-color: #0aab8a;
 		color: #0aab8a; 
 	}	
+  .pagination li.active a {
+    border-color: #0aab8a;
+    color: #0aab8a; 
+  } 
+
+
+
 	
 /* #Blog
    ========================================================================== */

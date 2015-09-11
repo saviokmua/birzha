@@ -8,11 +8,18 @@ end
 def create
   @feedback = Feedback.new(params[:feedback])
   if @feedback.valid?
-    # TODO send message here
-    redirect_to root_url, notice: "Message sent! Thank you for contacting us."
+    email = 'alex@webit.in.ua'
+    Mailer.feedback_email(params[:feedback]).deliver_now
+    redirect_to feedback_send_done_path
   else
     render :index
   end
 end
+
+
+def send_done
+
+end
+
 
 end

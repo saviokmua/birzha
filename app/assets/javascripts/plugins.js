@@ -157,7 +157,7 @@
 				scrollwheel: true,
 				zoom: 15,
 				markers: [{
-						address: 'New York, United States',
+						address: 'Хмельницький, вулиця Героїв майдану, 10',
 						html: '',
 						popup: false
 					}

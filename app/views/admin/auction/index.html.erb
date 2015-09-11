@@ -41,5 +41,5 @@
 </tr>
 <% end %>
 </table>
-<%= will_paginate @auctions %>
+<%= will_paginate @auctions, previous_label: "Назад",next_label: "Вперед" %>
 <% end %>

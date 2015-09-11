@@ -6,33 +6,7 @@
             
             <!-- /// FOOTER TOP  //////////////////////////////////////////////////////////////////////////////////////////////////// -->
                 
-                <div class="row">
-                  <div class="span12" id="footer-top-widget-area-1">
-                      
-                        <div class="widget widget_text">
-                    
-                            <div class="textwidget">
-                                
-                                <div class="row">
-                                  <div class="span9">
-                                      
-                                        <h1 class="last">Want <strong>the best</strong> for your business?</h1>
-                                        
-                                    </div><!-- end .span9 -->
-                                    <div class="span3">
-                                      
-                                        <a class="btn btn-black btn-large" href="#">Purchase <strong>Now!</strong></a>
-                                        
-                                    </div><!-- end .span3 -->
-                                </div><!-- end .row -->
-                                
-                            </div><!-- end .textwidget -->
-                            
-                        </div><!-- end .widget_text -->
-                        
-                    </div><!-- end .span12 -->
-                </div><!-- end .row -->
-            
+             
             <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
             
             </div><!-- end #footer-top -->  
@@ -46,14 +20,22 @@
                         <div class="widget widget_text">
                             
                             <h3 class="widget-title">
-                                <span>About us</span>
+                                <span>Про нас</span>
                             </h3>
                         
                             <div class="textwidget">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. 
-                 Estibulum non aliquam odio, vitae vehicula dolor. </p>
-                                <p class="last">Sed congue ligula nisi, id tempor nibh tempor molestie. Duis interdum neque
-                ligula, sit amet porttitor odio semper.</p>
+                                <p>
+Проведення аукціонів
+Оформлення договорів
+купівлі продажу.
+Експертна оцінка майна
+(сертифікат №1800/03)
+Консультативні послуги
+Проведення аукціонів з
+продажу квартир,
+транспорту, нерухомості
+фізичних та юридичних осіб
+                                </p>
                             </div><!-- end .textwidget -->
                             
                         </div><!-- end .widget_text -->
@@ -64,60 +46,39 @@
                        <div class="widget ewf_widget_blog-post">
                             
                             <h3 class="widget-title">
-                                <span>Blog</span>
+                                <span>Новини</span>
                             </h3>
                         
                             <ul class="blog-post">
-                              <li>
-                              
-                                    <%= image_tag "content/footer/45x42-1.png" %>
-                                    
-                                    <p>
-                                        News 
-                                        <span>15.3.2014</span>
-                                    </p>
-                                    
-                                    <p>
-                                        <a href="#">Aliquam aliquam pellentesque elit vel accumsan</a>
-                                    </p>
-                                
-                                </li>
+                              <% Article.block.each do |a|%>
                                 <li>
-                              
-                                    <%= image_tag "content/footer/45x42-2.png" %>
-                                    
                                     <p>
-                                        Media 
-                                        <span>9.2.2014</span>
+                                      <%= article_link a %>
+                                      <span><%= a.created_at_date %></span>
                                     </p>
-                                    
-                                    <p>
-                                        <a href="#">Sed venenatis, nibh et commodo malesuada nibh</a>
-                                    </p>
-                                
                                 </li>
+                                <% end %>
                             </ul>
-                            
                         </div><!-- end .widget_blog-post -->
-                        
                     </div><!-- end .span3 -->
                     <div class="span3" id="footer-middle-widget-area-3">
-                      
                         <div class="widget ewf_widget_contact_info">
-                            
                             <h3 class="widget-title">
-                                <span>Contact</span>
+                                <span>Контакти</span>
                             </h3>
-                        
                             <address>
-                              <strong>Sapphire Offices</strong><br>
-                121th Street North East<br>
-                Atlanta, GA 30309<br>
-                <br>
-                                Phone: (012) 345-6789<br>
-                Fax: (012) 456-7890<br> 
-                                E-mail: office@sapphire.com 
+                              <strong>Товарна Біржа "Подільська" </strong><br>
+                              29000 м. Хмельницький,</br>
+                              вул. Театральна, 10</br>
+                              тел.65-05-13, 70-20-73,</br>
+                              70-22-10, 70-22-11,</br>
+                              тел./факс 79-58-01</br>
+                              код 32452151</br>
+                              р/р 2600001258208</br>
+                              МФО 325365 ХВ ЦФ ПАТ "Кредобанк"</br>
+                              Email: info@birhza.km.ua </br>
                             </address>
+
                             
                         </div><!-- end .widget_contact_info -->
                         
@@ -127,15 +88,14 @@
                         <div class="widget ewf_widget_newsletter">
                             
                             <h3 class="widget-title">
-                                <span>Newsletter</span>
+                                <span>Зворотній зв'язок</span>
                             </h3>
                         
-                            <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore aliqua. </p>
+                            <p>Виникли питання? Потрібна допомога? Напишіть нам! Ми будемо раді Вам допомогти </p>
                             
-                            <form id="newsletter-subscribe-form" action="#">
+                            <form id="newsletter-subscribe-form" action="/feedback">
                                 <fieldset>
-                                    <input type="text" name="email" placeholder="email address...">
-                                    <input type="submit" name="submit" value="Go!">
+                                    <input type="submit" name="submit" value="Написати нам">
                                 </fieldset>
                             </form>
                             

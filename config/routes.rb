@@ -8,12 +8,14 @@ Rails.application.routes.draw do
   get '/etorgy', to: 'static_pages#indevelopment'
   get '/untreatedwood', to: 'static_pages#untreated_wood'
   get '/download/propoz/:filename', to: "static_pages#download_propoz"
+  get '/feedback/send_done', to: 'feedback#send_done'
  
 
   resources :result, only: [:index]
   resources :articles, only: [:index,:show]
   resources :pages, only: [:show]
   resources :feedback, only: [:create, :index]
+  
   resources :auction, only: [:index,:show,:download] do
     member do
       get "download"

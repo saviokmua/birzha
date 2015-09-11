@@ -2,11 +2,12 @@
 <div id="page-header">
   <div class="row">
     <div class="span12">
-      <% if @article.news %>
+      <% unless @article.auction_enable %>
       <h2>НОВИНИ</h2>
       <% else %>
       <h2><%= article_title @article %></h2>
       <% end %>
+
     </div>
     <!-- end .span12 -->
   </div><!-- end .row -->
@@ -15,6 +16,8 @@
 <div class="row">
   <div class="span12">
     <h3 class="headline" style="margin-bottom: 5px;"><span><%= article_title @article %></span></h3>
+    <%= @article.created_at_date %>
+    <br><br>
       <%= (article_content @article).html_safe %>
     </div>
   </div>

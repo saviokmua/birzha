@@ -21,6 +21,8 @@
         <h3 class="headline" style="margin-bottom: 5px;">
             <span><%= article_link a %></span>
         </h3>
+        <%= a.created_at_date %>
+        <br><br>
         <div style="clear">
           <%= (article_content a,true ).html_safe %>
         </div>
@@ -30,5 +32,6 @@
 </div>
 <br>
 <% end %>
-<%= will_paginate @articles %>
+<%= will_paginate @articles, previous_label: "Назад",next_label: "Вперед" %>
+<br>
     <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
