@@ -1,0 +1,8 @@
+<% provide(:title, 'Налаштування') %>
+<h2>Налаштування</h2>
+
+<%= bootstrap_form_tag @settings do |f| %>
+<%= f.text_field :name, label: "Назва сайту", value: f.options[:name] %>
+<%= f.text_field :email, label: "e-mail", value: f.options[:email] %>
+<%= submit_tag "Зберегти" %>
+<% end %>

@@ -1,8 +1,8 @@
 class Mailer < ApplicationMailer
   
   def feedback_email params
-    email='alex@webit.in.ua'
+    email=Rails.application.config.birzha_settings[:email]
     @params = params
-    mail(to: email, subject: 'Повідомлення з сайту (зворотній зв\'язок)')
+    mail(to: email, subject: 'Повідомлення з сайту (зворотній зв\'язок)', from: "feedback@birhza.km.ua")
   end
 end

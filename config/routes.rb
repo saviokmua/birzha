@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :articles, only: [:index,:show]
   resources :pages, only: [:show]
   resources :feedback, only: [:create, :index]
+
   
   resources :auction, only: [:index,:show,:download] do
     member do
@@ -36,6 +37,8 @@ Rails.application.routes.draw do
     end
     resources :propoz
     resources :result
+    resources :setting, only: [:index, :create]
+    resources :users
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

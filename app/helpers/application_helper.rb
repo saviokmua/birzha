@@ -2,7 +2,8 @@ module ApplicationHelper
 
 # Returns the full title on a per-page basis.
   def full_title(page_title)
-    base_title = "Подільська Товарна Біржа"
+    #base_title = "Подільська Товарна Біржа"
+    base_title = Rails.application.config.birzha_settings[:name]
     if page_title.empty?
       base_title
     else
