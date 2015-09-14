@@ -1,5 +1,6 @@
   <%= f.text_field :name, label: "Назва" %>
-  <%= f.date_select :started_at, label: "Дата проведення" %>
+  <%= f.datetime_picker :started_at, label: "Дата проведення", readonly: true, format: "%d.%m.%Y",datetimepicker_format: "YYYY-MM-SS"  %>
+   
    <%= f.collection_select :category_id, Category.all, :id, :name,  {label: "Категорія", prompt: "Виберіть категорію"}  %>
    <%= f.collection_select :status_id, Status.all, :id, :name,  {label: "Статус", prompt: "Виберіть статус"}  %>
   <% if @auction.filename.present? %>
@@ -12,4 +13,5 @@
   <%= f.file_field :file,{label: "Новий файл", prompt: "Виберіть файл"} %>
 
    <%= f.text_field :cina, label: "Ціна" %>
-  <%= f.submit " Зберегти " %>
+  <%= f.submit " Зберегти ", class: "btn btn-success" %>
+  <%= link_to " Назад ", admin_auction_index_path, class: "btn btn-danger" %>

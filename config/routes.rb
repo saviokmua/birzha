@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/untreatedwood', to: 'static_pages#untreated_wood'
   get '/download/propoz/:filename', to: "static_pages#download_propoz"
   get '/feedback/send_done', to: 'feedback#send_done'
+  get '/torgy', to: 'static_pages#torgy'
  
 
   resources :result, only: [:index]

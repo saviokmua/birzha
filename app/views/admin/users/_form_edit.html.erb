@@ -1,0 +1,5 @@
+  <%= f.text_field :email, label: "email"  %>
+  <%= f.text_field :password, label: "Новий пароль", placeholder: "Залиште поле пустим, якщо пароль не потрібно змінювати", help: "Не менше 8-ми символів", autocomplete: "off" %>
+  <%= f.check_box :admin, label: "Адміністратор" %>
+    <%= f.submit " Зберегти ", class: "btn btn-success" %>
+  <%= link_to " Назад ", admin_users_path, class: "btn btn-danger" %>

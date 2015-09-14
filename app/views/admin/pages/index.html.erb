@@ -4,7 +4,7 @@
 <tr>
 	<td style="width:20px">№</td>
 	<td>Назва</td>
-	<td style="width:80px"><%= link_to bootstrap_icon(:add), new_admin_page_path, :class => 'btn' %></td>	
+	<td style="width:80px" align="center"><%= link_to bootstrap_icon(:add), new_admin_page_path, :class => 'btn', title: "Створити нову сторінку" %></td>	
 </tr>
 
 <% i = @start_num %>
@@ -13,10 +13,10 @@
 <td><%= i += 1 %></td>
 <td><%= p.title %>
 </td>
-<td>
-	<%= link_to bootstrap_icon(:show), admin_page_path(p) %>
-	<%= link_to bootstrap_icon(:edit), edit_admin_page_path(p) %>
-	<%= link_to bootstrap_icon(:destroy), admin_page_path(p), :method => :delete, :data => { :confirm => 'Знищити?' } unless p.nodelete %>
+<td align="center">
+	<%= link_to bootstrap_icon(:show), page_path(p), target: "_blank", title: "Перегляд" %>
+	<%= link_to bootstrap_icon(:edit), edit_admin_page_path(p), title: "Редагувати" %>
+	<%= link_to bootstrap_icon(:destroy), admin_page_path(p), title: "Знищити", :method => :delete, :data => { :confirm => 'Знищити?' } unless p.nodelete %>
 </td>
 </tr>
 <% end %>

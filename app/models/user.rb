@@ -3,4 +3,5 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  validates_presence_of :email, message: "Поле обов'язкове для заповнення"
 end

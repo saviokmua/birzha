@@ -21,6 +21,7 @@
 //= require jquery.validate.additional-methods
 //= require jquery.validate.localization/messages_uk
 
+
 $(document).ready(function () {
 $("#new_feedback").validate({
 debug: true,
@@ -66,4 +67,18 @@ $(document).on('page:load', auction_enable);
 $(document).ready(form_search_order);
 $(document).on('page:load', form_search_order);
 
+$(document).on("page:load ready", function(){
+    
+    $('.bootstrap_form-datetimepicker').datepicker(
+{
+    isRTL: false,
+    format: 'dd.mm.yyyy',
+    autoclose:true,
+    language: 'uk'
+}
+
+
+
+      );
+});
 

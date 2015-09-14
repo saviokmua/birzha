@@ -1,5 +1,6 @@
   <%= f.text_field :title, label: "Назва"  %>
   <%= f.label :content, "Текст" %>
-  <%= f.cktext_area :content, label: "Текст", rows: 20, ckeditor: { language: 'uk' } %>
+  <%= f.cktext_area :content, label: "Текст", ckeditor: { language: 'uk', height: 400 } %>
   <%= f.check_box :nodelete, label: "Заборонити знищення сторінки" %>
-  <%= f.submit " Зберегти "%>
+  <%= f.submit " Зберегти ", class: "btn btn-success" %>
+  <%= link_to " Назад ", admin_pages_path, class: "btn btn-danger" %>

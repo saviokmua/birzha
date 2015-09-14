@@ -3,6 +3,7 @@ class Auction < ActiveRecord::Base
   belongs_to :category
   has_many :articles
   validates_presence_of :name, message: "Поле обов'язкове для заповнення"
+  validates_presence_of :started_at, message: "Вкажіть дату проведення аукціону"
   validates_presence_of :status_id,:category_id, message: "Виконайте вибір значення"
   validates_associated :status, :category
   validates_numericality_of :cina, message: "Введіть будь-ласка ціну"
@@ -12,7 +13,7 @@ class Auction < ActiveRecord::Base
   end
 
   def started_at_date
-    self.started_at.strftime("%d.%m.%Y")
+    self.started_at.strftime("%d.%m.%Y") if self.started_at.present?
   end
 
   def self.search(search)

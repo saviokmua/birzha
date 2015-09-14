@@ -1,4 +1,5 @@
   <%= f.text_field :title, label: "Назва" %>
   <%= f.file_field :filename, { label: "Файл із пропозиціями", prompt: "Виберіть файл" } %>
   <%= f.check_box :enable, label: "Показувати на сайті" %>
-  <%= f.submit " Зберегти "%>
+  <%= f.submit " Зберегти ", class: "btn btn-success" %>
+  <%= link_to " Назад ", admin_propoz_index_path, class: "btn btn-danger" %>

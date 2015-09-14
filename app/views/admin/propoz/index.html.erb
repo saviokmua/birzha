@@ -5,7 +5,7 @@
 <tr>
 	<td style="width:20px">№</td>
 	<td>Назва</td>
-	<td style="width:80px"><%= link_to bootstrap_icon(:add), new_admin_propoz_path, :class => 'btn' %></td>	
+	<td style="width:80px" align="center"><%= link_to bootstrap_icon(:add), new_admin_propoz_path, class: 'btn',title: "Створити" %></td>	
 </tr>
 
 <% i = @start_num %>
@@ -13,10 +13,10 @@
 <tr>
 <td><%= i += 1 %></td>
 <td><%= p.title %></td>
-<td>
-	<%= link_to bootstrap_icon(:show), admin_propoz_path(p) %>
-	<%= link_to bootstrap_icon(:edit), edit_admin_propoz_path(p) %>
-	<%= link_to bootstrap_icon(:destroy), admin_propoz_path(p), :method => :delete, :data => { :confirm => 'Знищити?' } %>
+<td align="center">
+	<%= link_to bootstrap_icon(:show), "/untreatedwood", title: "Перегляд", target: "_blank" %>
+	<%= link_to bootstrap_icon(:edit), edit_admin_propoz_path(p), title: "Редагувати" %>
+	<%= link_to bootstrap_icon(:destroy), admin_propoz_path(p), :method => :delete, :data => { :confirm => 'Знищити?' }, title: "Знищшити" %>
 </td>
 </tr>
 <% end %>

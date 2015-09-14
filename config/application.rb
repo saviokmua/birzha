@@ -26,6 +26,7 @@ module Birzha
     config.action_mailer.default_url_options = { host: 'localhost.local' }
     require 'yaml'
     config.birzha_settings = YAML::load_file "settings.yml"
+    config.i18n.default_locale = :uk
 
   end
 end

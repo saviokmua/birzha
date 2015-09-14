@@ -1,0 +1,4 @@
+<h2>Редагування користувача</h2>
+<%= bootstrap_form_for(@user,url: admin_user_path) do |f| %>
+<%= render partial: "admin/users/form_edit", locals: {f: f} %>
+<% end %>

@@ -6,19 +6,19 @@
 	<td style="width:20px">№</td>
 	<td>Дата</td>
   <td>Назва</td>
-	<td style="width:80px"><%= link_to bootstrap_icon(:add), new_admin_result_path, :class => 'btn' %></td>	
+	<td style="width:80px" align="center"><%= link_to bootstrap_icon(:add), new_admin_result_path, :class => 'btn' %></td>	
 </tr>
 
 <% i = @start_num %>
 <% @results.each do |r| %>
 <tr>
 <td><%= i += 1 %></td>
-<td><%= r.date %></td>
+<td><%= r.date_at_date %></td>
 <td><%= r.title %></td>
-<td>
-	<%= link_to bootstrap_icon(:show), admin_result_path(r) %>
-	<%= link_to bootstrap_icon(:edit), edit_admin_result_path(r) %>
-	<%= link_to bootstrap_icon(:destroy), admin_result_path(r), :method => :delete, :data => { :confirm => 'Знищити?' } %>
+<td align="center">
+	<%= link_to bootstrap_icon(:show), "/result",title: "Перегляд", target: "_blank" %>
+	<%= link_to bootstrap_icon(:edit), edit_admin_result_path(r), title: "Редагувати" %>
+	<%= link_to bootstrap_icon(:destroy), admin_result_path(r), :method => :delete, :data => { :confirm => 'Знищити?'}, title: "Знищшити" %>
 </td>
 </tr>
 <% end %>

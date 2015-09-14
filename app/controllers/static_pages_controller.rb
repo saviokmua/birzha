@@ -8,6 +8,10 @@ class StaticPagesController < ApplicationController
   def indevelopment
   end
 
+  def torgy
+  end
+  
+
   def untreated_wood
     @propozs=Propoz.where(enable: 1)
 

@@ -1,4 +1,6 @@
   <%= f.text_field :name, label: "Назва" %>
   <%= f.label :documents, "Перелік документів" %>
-  <%= f.cktext_area :documents, rows: 20, ckeditor: { language: 'uk' } %>
-  <%= f.submit " Зберегти " %>
+  <%= f.cktext_area :documents, ckeditor: { language: 'uk',height: 400 } %>
+  <br>
+  <%= f.submit " Зберегти ", class: "btn btn-success" %>
+  <%= link_to " Назад ", admin_status_index_path, class: "btn btn-danger" %>

@@ -130,7 +130,7 @@ end
 def propoz propozs
   res = ''
   propozs.each do |propoz|
-    unless propoz.html.empty?
+    unless propoz.html.nil?
       file_path||= Rails.root.join('public', 'uploads', 'propoz', propoz.filename) if propoz.filename.present?
       file_html_path = Rails.root.join('public', 'uploads', 'propoz', propoz.html)
       if File.file?(file_html_path)

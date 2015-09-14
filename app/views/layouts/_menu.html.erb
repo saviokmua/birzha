@@ -26,48 +26,38 @@
                   </li>
               </ul>
             </li>
-
-
             <li class="current">
                           <%= link_to "Новини", articles_path %>
                                        
             </li>
-            
-
             <li class="current">
                           <%= link_to "Законодавство", page_path(2) %>
                                       
             </li>
 
             <li class="current">
-                          <%= link_to "Торги і аукціони", :root %>
+                <%= link_to "Торги і аукціони", "/torgy" %>
                 <ul>
                   <li>
-                          <%= link_to "Аукціон з необробленої деревини", "/untreatedwood" %>
-                          <ul>
-                            <li><%= link_to "Результати аукціону з необробленої деревини", result_index_path %></li>
-                          </ul>
+                    <%= link_to "Аукціон з необробленої деревини", "/untreatedwood" %>
+                    <ul>
+                        <li>
+                           <%= link_to "Результати аукціону з необробленої деревини", result_index_path %>
+                        </li>
+                    </ul>
                   </li>                  
-
                   <li>
-                          <%= link_to "Біржовий бюлетень", auction_index_path %>
+                      <%= link_to "Біржовий бюлетень", auction_index_path %>
                   </li>
                   <li>
-                          <%= link_to "Електронні біржові торги", "/etorgy" %>
+                      <%= link_to "Електронні біржові торги", "/etorgy" %>
                   </li>
-
                 </ul>
                                        
             </li>
-                                       
-
             <li class="current">
                           <%= link_to "Експертна оцінка майна", page_path(3) %>
             </li>
-           
-
-            
           </ul>
-
         </div><!-- end .span9 -->
       </div><!-- end .row -->   

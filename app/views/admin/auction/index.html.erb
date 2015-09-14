@@ -21,7 +21,7 @@
   <td><%= link_order "Категорія","categories.name",params[:search][:order] %></td>
   <td><%= link_order "Статус","statuses.name",params[:search][:order] %></td>
   <td><%= link_order "Ціна,грн",:cina,params[:search][:order] %></td>
-  <td style="width:80px"><%= link_to bootstrap_icon(:add), new_admin_auction_path, :class => 'btn' %></td> 
+  <td style="width:80px" align="center"><%= link_to bootstrap_icon(:add), new_admin_auction_path, :class => 'btn' %></td> 
 </tr>
 
 <% i = @start_num %>
@@ -33,10 +33,10 @@
 <td><%= a.category.name %></td>
 <td><%= a.status.name %></td>
 <td><%= a.cina %></td>
-<td>
-  <%= link_to bootstrap_icon(:show), admin_auction_path(a) %>
-  <%= link_to bootstrap_icon(:edit), edit_admin_auction_path(a) %>
-  <%= link_to bootstrap_icon(:destroy), admin_auction_path(a), :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+<td align="center">
+  <%= link_to bootstrap_icon(:show), auction_path(a), target: "_blank", title: "Перегляд" %>
+  <%= link_to bootstrap_icon(:edit), edit_admin_auction_path(a), title: "Редагувати" %>
+  <%= link_to bootstrap_icon(:destroy), admin_auction_path(a), title: "Знищити", :method => :delete, :data => { :confirm => 'Знищити?' } %>
 </td>
 </tr>
 <% end %>
