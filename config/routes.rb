@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  #match "/404", to: "errors#error404", via: [ :get, :post, :patch, :delete ]
+  
   devise_for :users
   root 'static_pages#home'
   get 'static_pages/home'
@@ -41,7 +43,7 @@ Rails.application.routes.draw do
     resources :setting, only: [:index, :create]
     resources :users
   end
-
+get "*any", via: :all, to: "errors#error404"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

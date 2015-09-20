@@ -4,7 +4,7 @@
 <tr>
 	<td style="width:20px">№</td>
 	<td>Назва</td>
-	<td style="width:80px"><%= link_to bootstrap_icon(:add), new_admin_article_path, :class => 'btn' %></td>	
+	<td align="center" style="width:80px"><%= link_to bootstrap_icon(:add), new_admin_article_path, class: 'btn', title: "Створити" %></td>	
 </tr>
 
 <% i = @start_num %>
@@ -17,10 +17,10 @@
     "<span class='italic'>Пререліз: <span>".html_safe+a.auction.name
   end %>
 </td>
-<td>
-	<%= link_to bootstrap_icon(:show), admin_article_path(a) %>
-	<%= link_to bootstrap_icon(:edit), edit_admin_article_path(a) %>
-	<%= link_to bootstrap_icon(:destroy), admin_article_path(a), :method => :delete, :data => { :confirm => 'Знищити?' } %>
+<td align="center">
+	<%= link_to bootstrap_icon(:show), article_path(a), title: "Перегляд", target: "_blank" %>
+  <%= link_to bootstrap_icon(:edit), edit_admin_article_path(a), title: "Редагувати" %>
+	<%= link_to bootstrap_icon(:destroy), admin_article_path(a), :method => :delete, :data => { :confirm => 'Знищити?' }, titile: "Знищити" %>
 </td>
 </tr>
 <% end %>

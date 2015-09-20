@@ -1,10 +1,15 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+  #rescue_from ActiveRecord::RecordNotFound, with: :not_found
+   rescue_from ActiveRecord::RecordNotFound do |exception|
+      not_found
+   end
+
   protect_from_forgery with: :exception
- @a=Article.block
+  @a=Article.block
 
 
-
+def not_found
+  render "errors/error404", status: 404
+end
 
 end

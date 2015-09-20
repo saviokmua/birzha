@@ -16,6 +16,6 @@ class Admin::SettingController < AdminController
 
   private
   def settings_params
-    params.permit(:name, :email)
+    params.permit(:name, :email,:facebook_url,:twitter_url,:googleplus_url,:linkedin_url)
   end
 end

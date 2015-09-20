@@ -22,21 +22,9 @@
                           
                         <div class="fixed">
                             
-                            <a href="#" class="facebook-icon social-icon">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                            <a href="#" class="twitter-icon social-icon">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                            <a href="#" class="googleplus-icon social-icon">
-                                <i class="fa fa-google-plus"></i>
-                            </a>
-                            <a href="#" class="pinterest-icon social-icon">
-                                <i class="fa fa-pinterest"></i>
-                            </a>
-                            <a href="#" class="youtube-icon social-icon">
-                                <i class="fa fa-youtube"></i>
-                            </a>
+                            <%= render "layouts/social" %>
+
+
                             <%= 
                               link_to  "<i class=\"fa fa-check-circle\"></i>".html_safe,admin_root_path, class: "social-icon"
                             %>

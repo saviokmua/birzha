@@ -1,0 +1,15 @@
+                          <% if Rails.application.config.birzha_settings[:facebook_url].present? %>
+                            <%= link_to '<i class="fa fa-facebook"></i>'.html_safe,Rails.application.config.birzha_settings[:facebook_url], target: '_blank',title: "\u041c\u0438 \u0443 Facebook", class: "facebook-icon social-icon" %>
+                            <% end %>
+
+                            <% if Rails.application.config.birzha_settings[:twitter_url].present? %>
+                            <%= link_to '<i class="fa fa-twitter"></i>'.html_safe,Rails.application.config.birzha_settings[:twitter_url], target: '_blank',title: "\u041c\u0438 \u0443 Twitter", class: "twitter-icon social-icon" %>
+                            <% end %>
+
+                            <% if Rails.application.config.birzha_settings[:googleplus_url].present? %>
+                            <%= link_to '<i class="fa fa-google-plus"></i>'.html_safe,Rails.application.config.birzha_settings[:googleplus_url], target: '_blank',title: "\u041c\u0438 \u0443 Google Plus", class: "googleplus-icon social-icon" %>
+                            <% end %>
+
+                            <% if Rails.application.config.birzha_settings[:linkedin_url].present? %>
+                            <%= link_to '<i class="fa fa-linkedin"></i>'.html_safe,Rails.application.config.birzha_settings[:linkedin_url], target: '_blank',title: "\u041c\u0438 \u0443 LinkedIn", class: "linkedin-icon social-icon" %>
+                            <% end %>

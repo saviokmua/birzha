@@ -21,6 +21,7 @@ module Birzha
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.exceptions_app = self.routes
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
     config.action_mailer.default_url_options = { host: 'localhost.local' }
@@ -28,5 +29,7 @@ module Birzha
     config.birzha_settings = YAML::load_file "settings.yml"
     config.i18n.default_locale = :uk
 
+    
+    
   end
 end

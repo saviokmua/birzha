@@ -4,5 +4,10 @@
 <%= bootstrap_form_tag @settings do |f| %>
 <%= f.text_field :name, label: "Назва сайту", value: f.options[:name] %>
 <%= f.text_field :email, label: "e-mail", value: f.options[:email] %>
-<%= submit_tag "Зберегти" %>
+<%= f.text_field :facebook_url, label: "facebook", value: f.options[:facebook_url] %>
+<%= f.text_field :twitter_url, label: "twitter", value: f.options[:twitter_url] %>
+<%= f.text_field :googleplus_url, label: "google plus", value: f.options[:googleplus_url] %>
+<%= f.text_field :linkedin_url, label: "linkedin", value: f.options[:linkedin_url] %>
+<%= f.submit " Зберегти ", class: "btn btn-success" %>
+  <%= link_to " Назад ", admin_root_path, class: "btn btn-danger" %>
 <% end %>

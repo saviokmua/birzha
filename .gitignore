@@ -15,3 +15,13 @@
 /log/*
 !/log/.keep
 /tmp
+/public/uploads/propoz
+/public/uploads/result
+database.yml
+doc/
+*.swp
+*~
+.project
+.DS_Store
+.idea
+.secret

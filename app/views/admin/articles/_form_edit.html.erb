@@ -7,4 +7,6 @@
   <%= f.label :content, "Текст" %>
   <%= f.cktext_area :content, rows: 20, ckeditor: { language: 'uk' } %>
 </div>
-  <%= f.submit " Зберегти "%>
+  <br>
+  <%= f.submit " Зберегти ", class: "btn btn-success" %>
+  <%= link_to " Назад ", admin_articles_path, class: "btn btn-danger" %>

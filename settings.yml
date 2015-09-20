@@ -1,3 +1,7 @@
 --- !ruby/hash:ActionController::Parameters
-name: "Подільська Товарна Біржа"
+name: "Товарна Біржа Подільська"
 email: savio.km.ua@gmail.com
+facebook_url: ''
+twitter_url: '2'
+googleplus_url: '3'
+linkedin_url: '4'
