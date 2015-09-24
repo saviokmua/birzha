@@ -24,7 +24,7 @@ module Birzha
     config.exceptions_app = self.routes
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
-    config.action_mailer.default_url_options = { host: 'localhost.local' }
+    config.action_mailer.default_url_options = { host: 'new.birzha.km.ua' }
     require 'yaml'
     config.birzha_settings = YAML::load_file "settings.yml"
     config.i18n.default_locale = :uk

@@ -99,7 +99,7 @@ def file_delete filename
 end
 
 def convert_to_html filename_path,path
-  cmd="/usr/bin/sudo /usr/bin/libreoffice --headless --convert-to html #{filename_path.to_s} --outdir #{path} "
+  cmd="/usr/local/bin/sudo /usr/local/bin/libreoffice --headless --convert-to html #{filename_path.to_s} --outdir #{path} "
   `#{cmd}`
   File.basename(filename_path,'.*').to_s+'.html'
 end
