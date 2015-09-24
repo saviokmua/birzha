@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/etorgy', to: 'static_pages#indevelopment'
   get '/untreatedwood', to: 'static_pages#untreated_wood'
   get '/download/propoz/:filename', to: "static_pages#download_propoz"
+  get '/download/result/:filename', to: "static_pages#download_result"
   get '/feedback/send_done', to: 'feedback#send_done'
   get '/torgy', to: 'static_pages#torgy'
  

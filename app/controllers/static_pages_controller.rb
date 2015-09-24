@@ -22,4 +22,10 @@ class StaticPagesController < ApplicationController
       send_file(Rails.root.join('public', 'uploads','propoz', filename),filename: filename)
   end
 
+  def download_result
+      filename=params[:filename]+'.'+params['format']
+      send_file(Rails.root.join('public', 'uploads','result', filename),filename: filename)
+  end
+
+
 end

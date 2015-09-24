@@ -87,7 +87,7 @@ end
 
 
 def article_link(article,title="")
-  if title=""
+  if title == ""
     title=article_title(article)
   end
   link_to title, article_url(article)
