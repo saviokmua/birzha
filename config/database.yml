@@ -32,5 +32,10 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: birzha
+  pool: 5
+  username: birzha
+  password: ",sh;f"
+  host: localhost

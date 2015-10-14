@@ -22,7 +22,8 @@ class Admin::AuctionController < AdminController
   	@auction = Auction.new(auction_params)
   	if @auction.save
   		flash[:success] = 'Створено новий запис'
-      redirect_to admin_auction_index_path
+  		file_upload @auction.id
+	    redirect_to admin_auction_index_path
   	else
   		flash[:error] = 'Помилка створення нового запису'
       render "new"

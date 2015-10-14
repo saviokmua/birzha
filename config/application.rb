@@ -28,6 +28,7 @@ module Birzha
     require 'yaml'
     config.birzha_settings = YAML::load_file "settings.yml"
     config.i18n.default_locale = :uk
+    config.web_console.whitelisted_ips = '195.78.38.11'
 
     
     
