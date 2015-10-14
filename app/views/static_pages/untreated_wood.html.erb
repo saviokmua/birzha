@@ -18,7 +18,7 @@
       <% if u.filename != '' && u.content =='' %>
       <%= link_to u.title, download_unprocessed_path(u.id) %>
       <% else  %>
-      <%= link_to_page_unprocessed u.id %>
+      <%= link_to_page_unprocessed u.id %><br><br>
       <% end  %>
       <% end  %>
       <% end  %>

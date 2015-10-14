@@ -60,6 +60,11 @@ function form_search_order(){
     $("#new_feedback").validate();
   };
 
+$(document).bind('page:change', function() {
+  $('.ckeditor').each(function() {
+    CKEDITOR.replace($(this).attr('id'));
+  });
+});
 
 
 $(document).ready(auction_enable);
