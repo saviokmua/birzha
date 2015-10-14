@@ -16,9 +16,9 @@
       <% @unprocessed.each do |u|  %>
       <% if u.visible == 1 %>
       <% if u.filename != '' && u.content =='' %>
-      <%= link_to u.title, download_unprocessed_path(u.id) %>
+      <%= link_to u.title, download_unprocessed_path(u.id) %><br><br>
       <% else  %>
-      <%= link_to_page_unprocessed u.id %><br><br>
+      <%= link_to_page_unprocessed u.id %>
       <% end  %>
       <% end  %>
       <% end  %>
