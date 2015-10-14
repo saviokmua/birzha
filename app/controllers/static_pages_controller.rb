@@ -14,7 +14,7 @@ class StaticPagesController < ApplicationController
 
   def untreated_wood
     @propozs=Propoz.where(enable: 1)
-    @unprocessed=Unprocessed.where(visible: 1)
+    @unprocessed=Unprocessed.where(visible: 1).order(:title)
   end
 
   def download_propoz
