@@ -1,0 +1,23 @@
+<h2>Необроблена деревина: записи</h2>
+<br><br>
+<table class="table table-striped table-bordered">
+  <tr>
+    <td style="width:20px">№</td>
+    <td>Назва</td>
+    <td style="width:80px" align="center"><%= link_to bootstrap_icon(:add), new_admin_unprocessed_path, :class => 'btn' %></td> 
+  </tr>
+
+  <% i = @start_num %>
+  <% @unprocesseds.each do |a| %>
+  <tr>
+    <td><%= i += 1 %></td>
+    <td><%= a.title %></td>
+    <td align="center">
+      <%= link_to bootstrap_icon(:show), unprocessed_path(a), target: "_blank", title: "Перегляд" %>
+      <%= link_to bootstrap_icon(:edit), edit_admin_unprocessed_path(a), title: "Редагувати" %>
+      <%= link_to bootstrap_icon(:destroy), admin_unprocessed_path(a), title: "Знищити", :method => :delete, :data => { :confirm => 'Знищити?' } %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<%= will_paginate @unprocesseds, previous_label: "Назад",next_label: "Вперед" %>

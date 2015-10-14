@@ -123,9 +123,26 @@ def page_title page_id
   end
 end
 
+def page_title_unprocessed page_id
+  @page=Unprocessed.find_by(id: page_id, visible: 1)
+  unless @page.nil?
+    @page.title
+  else
+    "запис не знайдено"
+  end
+end
+
+
+
 def link_to_page page_id
   link_to(page_title(page_id), page_path(page_id),target: "_blank")+("<br><br>").html_safe
 end
+
+def link_to_page_unprocessed page_id
+  link_to(page_title_unprocessed(page_id), unprocessed_path(page_id),target: "_blank")+("<br><br>").html_safe
+end
+
+
 
 def propoz propozs
   res = ''

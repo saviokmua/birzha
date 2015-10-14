@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/download/result/:filename', to: "static_pages#download_result"
   get '/feedback/send_done', to: 'feedback#send_done'
   get '/torgy', to: 'static_pages#torgy'
- 
+  
 
   resources :result, only: [:index]
   resources :articles, only: [:index,:show]
@@ -22,6 +22,12 @@ Rails.application.routes.draw do
 
   
   resources :auction, only: [:index,:show,:download] do
+    member do
+      get "download"
+    end
+  end
+
+  resources :unprocessed, only: [:index,:show,:download] do
     member do
       get "download"
     end
@@ -39,12 +45,16 @@ Rails.application.routes.draw do
     resources :auction do
       delete "file" => "auction#file_destroy"
     end
+    resources :unprocessed do
+      delete "file" => "unprocessed#file_destroy"
+    end
+
     resources :propoz
     resources :result
     resources :setting, only: [:index, :create]
     resources :users
   end
-get "*any", via: :all, to: "errors#error404"
+  get "*any", via: :all, to: "errors#error404"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

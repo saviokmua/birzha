@@ -1,0 +1,4 @@
+<h2>Необроблена деревина: редагування запису</h2>
+<%= bootstrap_form_for(@unprocessed,url: admin_unprocessed_path) do |f| %>
+<%= render partial: "admin/unprocessed/form_edit", locals: {f: f} %>
+<% end %>

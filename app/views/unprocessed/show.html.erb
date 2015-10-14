@@ -1,0 +1,32 @@
+<% provide(:title, @unprocessed.title) %>
+<div id="page-header">
+  <div class="row">
+    <div class="span12">
+      <h2>Аукціон з необробленої деревини</hs2>
+    </div>
+    <!-- end .span12 -->
+  </div><!-- end .row -->
+</div><!-- end #page-header -->
+
+<div class="row">
+  <div class="span12">
+    <h3 class="headline" style="margin-bottom: 5px;"><span><%= @unprocessed.title %></span></h3>
+    <br><br>
+      <%= (@unprocessed.content).html_safe %>
+
+      <div class="span4">
+        <ul class="circle">
+          <% if @unprocessed.filename.present? 
+              filename=Rails.root.join('public/uploads/unprocessed',@unprocessed.filename)
+              if File.file?(filename)
+          %>
+            <li>Додаткова інформація: <%= link_to (image_tag((image_file_type filename),class:  "auction_download")), download_unprocessed_path(@unprocessed.id) %></li>
+          <% end
+          end %>
+        </ul>
+      </div>    
+    </div>
+  </div>
+<br>
+    
+

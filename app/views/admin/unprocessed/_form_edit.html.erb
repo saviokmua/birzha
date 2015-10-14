@@ -1,0 +1,13 @@
+  <%= f.text_field :title, label: "Назва" %>
+  <%= f.cktext_area :content, rows: 20, ckeditor: { language: 'uk' } %>
+  <% if @unprocessed.filename.present? %>
+  <div class="unprocessed_file">
+    <%= link_to @unprocessed.filename_origin,download_unprocessed_path(@unprocessed.id) %>
+    <%= link_to 'Delete',admin_unprocessed_file_path(@unprocessed),  remote: true, method: :delete,  data: {confirm: "Знищити файл?"}, class: 'unprocessed_delete_file' %>
+  </div>
+  <% end %>
+
+  <%= f.file_field :file,{label: "Новий файл", prompt: "Виберіть файл"} %>
+  <%= f.check_box :visible, label: "Активний запис", class: "unprocessed_enable " %>  
+  <%= f.submit " Зберегти ", class: "btn btn-success" %>
+  <%= link_to " Назад ", admin_unprocessed_index_path, class: "btn btn-danger" %>
