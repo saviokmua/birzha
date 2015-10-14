@@ -1,6 +1,6 @@
   <%= f.text_field :title, label: "Назва" %>
   <div data-no-turbolink>
-  <%= f.cktext_area :content, rows: 20, ckeditor: { language: 'uk' } %>
+  <%= f.cktext_area :content, rows: 20, ckeditor: { language: 'uk' }, class: 'ckeditor' %>
 </div>
   <% if @unprocessed.filename.present? %>
   <div class="unprocessed_file">
