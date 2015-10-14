@@ -1,5 +1,7 @@
   <%= f.text_field :title, label: "Назва" %>
+  <div data-no-turbolink>
   <%= f.cktext_area :content, rows: 20, ckeditor: { language: 'uk' } %>
+</div>
   <% if @unprocessed.filename.present? %>
   <div class="unprocessed_file">
     <%= link_to @unprocessed.filename_origin,download_unprocessed_path(@unprocessed.id) %>
