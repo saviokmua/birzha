@@ -67,7 +67,6 @@ $(document).bind('page:change', function() {
   });
 });
 
-
 $(document).ready(auction_enable);
 $(document).on('page:load', auction_enable);
 $(document).ready(form_search_order);
@@ -87,4 +86,3 @@ $(document).on("page:load ready", function(){
 
       );
 });
-

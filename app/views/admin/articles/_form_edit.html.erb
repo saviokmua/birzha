@@ -5,7 +5,7 @@
   
   <div class="<%= "content " + ( "inline " unless f.object.auction_enable ).to_s + ( "none " if f.object.auction_enable).to_s %>" >
   <%= f.label :content, "Текст" %>
-  <%= f.cktext_area :content, rows: 20, ckeditor: { language: 'uk' } %>
+  <%= f.cktext_area :content, rows: 20, ckeditor: { language: 'uk' }, class: "ckeditor" %>
 </div>
   <br>
   <%= f.submit " Зберегти ", class: "btn btn-success" %>

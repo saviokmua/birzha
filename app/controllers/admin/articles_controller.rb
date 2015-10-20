@@ -7,7 +7,7 @@ class Admin::ArticlesController < AdminController
   end
 
   def new
-    @auctions= Auction.all
+    @auctions= Auction.all.order('started_at DESC')
     @article = Article.new()
   end
 
@@ -25,7 +25,7 @@ class Admin::ArticlesController < AdminController
   end
 
   def edit
-  	@auctions= Auction.all
+  	@auctions= Auction.all.order('started_at DESC')
     @article = Article.find_by(id: params[:id])
       if @article.nil?
       #@article = Article.new(id: params[:id]).save(validate: false)
