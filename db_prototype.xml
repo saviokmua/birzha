@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
+<!-- Active URL: file:///home/savio/tools/wwwsqldesigner/index.html -->
+<sql>
+	<datatypes db="mysql">
+		<group label="Numeric" color="rgb(238,238,170)">
+			<type label="Integer" length="0" sql="INTEGER" quote=""/>
+			<type label="TINYINT" length="0" sql="TINYINT" quote=""/>
+			<type label="SMALLINT" length="0" sql="SMALLINT" quote=""/>
+			<type label="MEDIUMINT" length="0" sql="MEDIUMINT" quote=""/>
+			<type label="INT" length="0" sql="INT" quote=""/>
+			<type label="BIGINT" length="0" sql="BIGINT" quote=""/>
+			<type label="Decimal" length="1" sql="DECIMAL" re="DEC" quote=""/>
+			<type label="Single precision" length="0" sql="FLOAT" quote=""/>
+			<type label="Double precision" length="0" sql="DOUBLE" re="DOUBLE" quote=""/>
+		</group>
+
+		<group label="Character" color="rgb(255,200,200)">
+			<type label="Char" length="1" sql="CHAR" quote="'"/>
+			<type label="Varchar" length="1" sql="VARCHAR" quote="'"/>
+			<type label="Text" length="0" sql="MEDIUMTEXT" re="TEXT" quote="'"/>
+			<type label="Binary" length="1" sql="BINARY" quote="'"/>
+			<type label="Varbinary" length="1" sql="VARBINARY" quote="'"/>
+			<type label="BLOB" length="0" sql="BLOB" re="BLOB" quote="'"/>
+		</group>
+
+		<group label="Date &amp; Time" color="rgb(200,255,200)">
+			<type label="Date" length="0" sql="DATE" quote="'"/>
+			<type label="Time" length="0" sql="TIME" quote="'"/>
+			<type label="Datetime" length="0" sql="DATETIME" quote="'"/>
+			<type label="Year" length="0" sql="YEAR" quote=""/>
+			<type label="Timestamp" length="0" sql="TIMESTAMP" quote="'"/>
+		</group>
+
+		<group label="Miscellaneous" color="rgb(200,200,255)">
+			<type label="ENUM" length="1" sql="ENUM" quote=""/>
+			<type label="SET" length="1" sql="SET" quote=""/>
+			<type label="Bit" length="0" sql="bit" quote=""/>
+		</group>
+	</datatypes><table x="42" y="11" name="users">
+	<row name="id" null="1" autoincrement="1">
+		<datatype>INTEGER</datatype>
+		<default>NULL</default></row>
+		<key type="PRIMARY" name="">
+			<part>id</part>
+		</key>
+		<comment>користувачі системи</comment>
+	</table>
+	<table x="654" y="211" name="carriers">
+		<row name="id" null="1" autoincrement="1">
+			<datatype>INTEGER</datatype>
+			<default>NULL</default><relation table="contacts" row="imageable_id" />
+			<relation table="carriers_direction" row="carriers_id" />
+			<relation table="files" row="imageable_id" />
+		</row>
+		<row name="name" null="1" autoincrement="0">
+			<datatype>VARCHAR(200)</datatype>
+			<default>NULL</default><comment>Назва (ТОВ)</comment>
+		</row>
+		<row name="address_reestr" null="1" autoincrement="0">
+			<datatype>INTEGER</datatype>
+			<default>NULL</default><relation table="address" row="id" />
+			<comment>місце реєстрації(адреса)</comment>
+		</row>
+		<row name="address_actual" null="1" autoincrement="0">
+			<datatype>INTEGER</datatype>
+			<default>NULL</default><comment>файтична адреса</comment>
+		</row>
+		<row name="address_mailing" null="1" autoincrement="0">
+			<datatype>INTEGER</datatype>
+			<default>NULL</default><comment>поштова адреса</comment>
+		</row>
+		<row name="carriers_status_id" null="1" autoincrement="0">
+			<datatype>INTEGER</datatype>
+			<default>NULL</default><relation table="carriers_status" row="id" />
+			<comment>id статусу перевізника</comment>
+		</row>
+		<row name="carriers_type_tz_id" null="1" autoincrement="0">
+			<datatype>INTEGER</datatype>
+			<default>NULL</default><relation table="carriers_type_tz" row="id" />
+		</row>
+		<row name="load_capacity_id" null="1" autoincrement="0">
+			<datatype>INTEGER</datatype>
+			<default>NULL</default></row>
+			<row name="count_auto" null="1" autoincrement="0">
+				<datatype>INTEGER</datatype>
+				<default>NULL</default><comment>к-ть авто</comment>
+			</row>
+			<row name="amap_enable" null="1" autoincrement="0">
+				<datatype>INTEGER</datatype>
+				<default>NULL</default></row>
+				<row name="amap_date_reestr" null="1" autoincrement="0">
+					<datatype>DATE</datatype>
+					<default>NULL</default><comment>АМАП - дата реєстрації</comment>
+				</row>
+				<row name="amap_number" null="1" autoincrement="0">
+					<datatype>VARCHAR</datatype>
+					<default>NULL</default></row>
+					<row name="description" null="1" autoincrement="0">
+						<datatype>MEDIUMTEXT</datatype>
+						<default>NULL</default></row>
+						<row name="visible" null="1" autoincrement="0">
+							<datatype>INTEGER</datatype>
+							<default>0</default></row>
+							<key type="PRIMARY" name="">
+								<part>id</part>
+								<part>address_reestr</part>
+								<part>address_actual</part>
+								<part>address_mailing</part>
+								<part>carriers_type_tz_id</part>
+								<part>load_capacity_id</part>
+							</key>
+							<comment>Перевізники</comment>
+						</table>
+						<table x="904" y="10" name="countries">
+							<row name="id" null="1" autoincrement="1">
+								<datatype>INTEGER</datatype>
+								<default>NULL</default><relation table="carriers_direction" row="country_id" />
+							</row>
+							<row name="name" null="1" autoincrement="0">
+								<datatype>VARCHAR(200)</datatype>
+								<default>NULL</default><comment>назва</comment>
+							</row>
+							<key type="PRIMARY" name="">
+								<part>id</part>
+							</key>
+							<comment>Країни</comment>
+						</table>
+						<table x="908" y="160" name="cities">
+							<row name="id" null="1" autoincrement="1">
+								<datatype>INTEGER</datatype>
+								<default>NULL</default><relation table="customer_export" row="city_id" />
+								<relation table="customer_import" row="city_id" />
+								<relation table="tickets" row="from_city_id" />
+								<relation table="tickets" row="to_city_id" />
+							</row>
+							<row name="country_id" null="1" autoincrement="0">
+								<datatype>INTEGER</datatype>
+								<default>NULL</default><relation table="countries" row="id" />
+								<comment>id країни</comment>
+							</row>
+							<row name="name" null="1" autoincrement="0">
+								<datatype>VARCHAR(200)</datatype>
+								<default>NULL</default><comment>назва міста</comment>
+							</row>
+							<key type="PRIMARY" name="">
+								<part>id</part>
+							</key>
+							<comment>Міста</comment>
+						</table>
+						<table x="875" y="263" name="streets">
+							<row name="id" null="1" autoincrement="1">
+								<datatype>INTEGER</datatype>
+								<default>NULL</default></row>
+								<row name="name" null="1" autoincrement="0">
+									<datatype>VARCHAR(200)</datatype>
+									<default>NULL</default><comment>назва вулиці</comment>
+								</row>
+								<key type="PRIMARY" name="">
+									<part>id</part>
+								</key>
+								<comment>Вулиці</comment>
+							</table>
+							<table x="467" y="349" name="address">
+								<row name="id" null="1" autoincrement="1">
+									<datatype>INTEGER</datatype>
+									<default>NULL</default><relation table="carriers" row="address_actual" />
+									<relation table="carriers" row="address_mailing" />
+									<relation table="customers" row="address_reestr" />
+									<relation table="customers" row="address_actual" />
+								</row>
+								<row name="city_id" null="1" autoincrement="0">
+									<datatype>INTEGER</datatype>
+									<default>NULL</default><relation table="cities" row="id" />
+									<comment>id міста</comment>
+								</row>
+								<row name="street_id" null="1" autoincrement="0">
+									<datatype>INTEGER</datatype>
+									<default>NULL</default><relation table="streets" row="id" />
+									<comment>id вулиці</comment>
+								</row>
+								<row name="bud" null="1" autoincrement="0">
+									<datatype>VARCHAR</datatype>
+									<default>NULL</default><comment>номер будинку</comment>
+								</row>
+								<row name="kv" null="1" autoincrement="0">
+									<datatype>INTEGER</datatype>
+									<default>NULL</default><comment>номер квартири</comment>
+								</row>
+								<row name="as_enable" null="1" autoincrement="0">
+									<datatype>INTEGER</datatype>
+									<default>0</default><comment>1 - юзаєм а/c</comment>
+								</row>
+								<row name="as" null="1" autoincrement="0">
+									<datatype>INTEGER</datatype>
+									<default>NULL</default><comment>номер абонентської скриньки</comment>
+								</row>
+								<key type="PRIMARY" name="">
+									<part>id</part>
+								</key>
+								<comment>адреси</comment>
+							</table>
+							<table x="875" y="477" name="carriers_status">
+								<row name="id" null="1" autoincrement="1">
+									<datatype>INTEGER</datatype>
+									<default>NULL</default></row>
+									<row name="name" null="1" autoincrement="0">
+										<datatype>VARCHAR</datatype>
+										<default>NULL</default><comment>назва статусу</comment>
+									</row>
+									<key type="PRIMARY" name="">
+										<part>id</part>
+									</key>
+									<comment>статуси перевізника</comment>
+								</table>
+								<table x="686" y="672" name="contacts">
+									<row name="id" null="1" autoincrement="1">
+										<datatype>INTEGER</datatype>
+										<default>NULL</default><relation table="phones" row="contact_id" />
+									</row>
+									<row name="imageable_id" null="1" autoincrement="0">
+										<datatype>INTEGER</datatype>
+										<default>NULL</default></row>
+										<row name="imageable_type" null="1" autoincrement="0">
+											<datatype>INTEGER</datatype>
+											<default>NULL</default></row>
+											<row name="name" null="1" autoincrement="0">
+												<datatype>VARCHAR(200)</datatype>
+												<default>NULL</default><comment>контактна особа (фіо)</comment>
+											</row>
+											<row name="position_id" null="1" autoincrement="0">
+												<datatype>INTEGER</datatype>
+												<default>NULL</default><comment>id посади</comment>
+											</row>
+											<row name="email" null="1" autoincrement="0">
+												<datatype>VARCHAR(200)</datatype>
+												<default>NULL</default></row>
+												<row name="skype" null="1" autoincrement="0">
+													<datatype>INTEGER</datatype>
+													<default>NULL</default></row>
+													<row name="viber" null="1" autoincrement="0">
+														<datatype>INTEGER</datatype>
+														<default>NULL</default></row>
+														<key type="PRIMARY" name="">
+															<part>id</part>
+															<part>position_id</part>
+															<part>imageable_id</part>
+														</key>
+														<comment>контакти</comment>
+													</table>
+													<table x="863" y="775" name="positions">
+														<row name="id" null="1" autoincrement="1">
+															<datatype>INTEGER</datatype>
+															<default>NULL</default><relation table="contacts" row="position_id" />
+														</row>
+														<row name="name" null="1" autoincrement="0">
+															<datatype>INTEGER</datatype>
+															<default>NULL</default><comment>назва посади</comment>
+														</row>
+														<key type="PRIMARY" name="">
+															<part>id</part>
+														</key>
+														<comment>посади</comment>
+													</table>
+													<table x="861" y="666" name="phones">
+														<row name="id" null="1" autoincrement="1">
+															<datatype>INTEGER</datatype>
+															<default>NULL</default></row>
+															<row name="contact_id" null="1" autoincrement="0">
+																<datatype>INTEGER</datatype>
+																<default>NULL</default><comment>id контакта</comment>
+															</row>
+															<row name="number" null="1" autoincrement="0">
+																<datatype>VARCHAR</datatype>
+																<default>NULL</default><comment>номер телефону</comment>
+															</row>
+															<key type="PRIMARY" name="">
+																<part>id</part>
+																<part>contact_id</part>
+															</key>
+															<comment>телефони</comment>
+														</table>
+														<table x="495" y="0" name="carriers_type_tz">
+															<row name="id" null="1" autoincrement="1">
+																<datatype>INTEGER</datatype>
+																<default>NULL</default></row>
+																<row name="name" null="1" autoincrement="0">
+																	<datatype>VARCHAR(200)</datatype>
+																	<default>NULL</default></row>
+																	<key type="PRIMARY" name="">
+																		<part>id</part>
+																	</key>
+																	<comment>Тип ТЗ</comment>
+																</table>
+																<table x="877" y="566" name="load_capacity">
+																	<row name="id" null="1" autoincrement="1">
+																		<datatype>INTEGER</datatype>
+																		<default>NULL</default><relation table="carriers" row="load_capacity_id" />
+																	</row>
+																	<row name="name" null="1" autoincrement="0">
+																		<datatype>VARCHAR(200)</datatype>
+																		<default>NULL</default></row>
+																		<key type="PRIMARY" name="">
+																			<part>id</part>
+																		</key>
+																		<comment>вантажопідйомність</comment>
+																	</table>
+																	<table x="690" y="7" name="carriers_direction">
+																		<row name="id" null="1" autoincrement="1">
+																			<datatype>INTEGER</datatype>
+																			<default>NULL</default></row>
+																			<row name="carriers_id" null="1" autoincrement="0">
+																				<datatype>INTEGER</datatype>
+																				<default>NULL</default></row>
+																				<row name="country_id" null="1" autoincrement="0">
+																					<datatype>INTEGER</datatype>
+																					<default>NULL</default></row>
+																					<key type="PRIMARY" name="">
+																						<part>id</part>
+																						<part>carriers_id</part>
+																						<part>country_id</part>
+																					</key>
+																					<comment>Напрямок роботи транспорту перевізника</comment>
+																				</table>
+																				<table x="876" y="345" name="files">
+																					<row name="id" null="1" autoincrement="1">
+																						<datatype>INTEGER</datatype>
+																						<default>NULL</default></row>
+																						<row name="imageable_id" null="1" autoincrement="0">
+																							<datatype>INTEGER</datatype>
+																							<default>NULL</default></row>
+																							<row name="imageable_type" null="1" autoincrement="0">
+																								<datatype>INTEGER</datatype>
+																								<default>NULL</default></row>
+																								<row name="filename" null="1" autoincrement="0">
+																									<datatype>VARCHAR(250)</datatype>
+																									<default>NULL</default></row>
+																									<key type="PRIMARY" name="">
+																										<part>id</part>
+																										<part>imageable_type</part>
+																										<part>imageable_id</part>
+																									</key>
+																									<comment>файли</comment>
+																								</table>
+																								<table x="247" y="272" name="customers">
+																									<row name="id" null="1" autoincrement="1">
+																										<datatype>INTEGER</datatype>
+																										<default>NULL</default><relation table="contacts" row="imageable_id" />
+																										<relation table="customer_export" row="customer_id" />
+																										<relation table="customer_import" row="customer_id" />
+																										<relation table="supply_plan" row="customer_id" />
+																										<relation table="tickets" row="customer_id" />
+																									</row>
+																									<row name="name" null="1" autoincrement="0">
+																										<datatype>VARCHAR(250)</datatype>
+																										<default>NULL</default></row>
+																										<row name="address_reestr" null="1" autoincrement="0">
+																											<datatype>INTEGER</datatype>
+																											<default>NULL</default></row>
+																											<row name="address_actual" null="1" autoincrement="0">
+																												<datatype>INTEGER</datatype>
+																												<default>NULL</default></row>
+																												<row name="address_mailing" null="1" autoincrement="0">
+																													<datatype>INTEGER</datatype>
+																													<default>NULL</default><relation table="address" row="id" />
+																												</row>
+																												<row name="type_cargo_id" null="1" autoincrement="0">
+																													<datatype>INTEGER</datatype>
+																													<default>NULL</default><comment>id типу вантажу</comment>
+																												</row>
+																												<row name="customer_type_tz_id" null="1" autoincrement="0">
+																													<datatype>INTEGER</datatype>
+																													<default>NULL</default><relation table="customer_type_tz" row="id" />
+																												</row>
+																												<row name="customer_status_id" null="1" autoincrement="0">
+																													<datatype>INTEGER</datatype>
+																													<default>NULL</default></row>
+																													<row name="visible" null="1" autoincrement="0">
+																														<datatype>INTEGER</datatype>
+																														<default>NULL</default></row>
+																														<key type="PRIMARY" name="">
+																															<part>id</part>
+																															<part>address_reestr</part>
+																															<part>address_actual</part>
+																															<part>address_mailing</part>
+																															<part>type_cargo_id</part>
+																															<part>customer_status_id</part>
+																															<part>customer_type_tz_id</part>
+																														</key>
+																														<comment>замовники</comment>
+																													</table>
+																													<table x="453" y="559" name="customer_export">
+																														<row name="id" null="1" autoincrement="1">
+																															<datatype>INTEGER</datatype>
+																															<default>NULL</default></row>
+																															<row name="customer_id" null="1" autoincrement="0">
+																																<datatype>INTEGER</datatype>
+																																<default>NULL</default></row>
+																																<row name="city_id" null="1" autoincrement="0">
+																																	<datatype>INTEGER</datatype>
+																																	<default>NULL</default></row>
+																																	<key type="PRIMARY" name="">
+																																		<part>id</part>
+																																		<part>customer_id</part>
+																																		<part>city_id</part>
+																																	</key>
+																																	<comment>Країна/місто експорт</comment>
+																																</table>
+																																<table x="222" y="538" name="customer_import">
+																																	<row name="id" null="1" autoincrement="1">
+																																		<datatype>INTEGER</datatype>
+																																		<default>NULL</default></row>
+																																		<row name="customer_id" null="1" autoincrement="0">
+																																			<datatype>INTEGER</datatype>
+																																			<default>NULL</default></row>
+																																			<row name="city_id" null="1" autoincrement="0">
+																																				<datatype>INTEGER</datatype>
+																																				<default>NULL</default></row>
+																																				<key type="PRIMARY" name="">
+																																					<part>id</part>
+																																					<part>customer_id</part>
+																																					<part>city_id</part>
+																																				</key>
+																																			</table>
+																																			<table x="18" y="226" name="type_cargo">
+																																				<row name="id" null="1" autoincrement="1">
+																																					<datatype>INTEGER</datatype>
+																																					<default>NULL</default><relation table="customers" row="type_cargo_id" />
+																																					<relation table="tickets" row="type_cargo_id" />
+																																				</row>
+																																				<row name="name" null="1" autoincrement="0">
+																																					<datatype>VARCHAR</datatype>
+																																					<default>NULL</default></row>
+																																					<key type="PRIMARY" name="">
+																																						<part>id</part>
+																																					</key>
+																																				</table>
+																																				<table x="6" y="337" name="customer_type_tz">
+																																					<row name="id" null="1" autoincrement="1">
+																																						<datatype>INTEGER</datatype>
+																																						<default>NULL</default></row>
+																																						<row name="name" null="1" autoincrement="0">
+																																							<datatype>VARCHAR</datatype>
+																																							<default>NULL</default></row>
+																																							<key type="PRIMARY" name="">
+																																								<part>id</part>
+																																							</key>
+																																							<comment>Тип необхідних ТЗ</comment>
+																																						</table>
+																																						<table x="251" y="5" name="supply_plan">
+																																							<row name="id" null="1" autoincrement="1">
+																																								<datatype>INTEGER</datatype>
+																																								<default>NULL</default></row>
+																																								<row name="customer_id" null="1" autoincrement="0">
+																																									<datatype>INTEGER</datatype>
+																																									<default>NULL</default></row>
+																																									<row name="date" null="1" autoincrement="0">
+																																										<datatype>DATE</datatype>
+																																										<default>NULL</default></row>
+																																										<row name="description" null="1" autoincrement="0">
+																																											<datatype>INTEGER</datatype>
+																																											<default>NULL</default></row>
+																																											<key type="PRIMARY" name="">
+																																												<part>id</part>
+																																												<part>customer_id</part>
+																																											</key>
+																																											<comment>План поставок замовника</comment>
+																																										</table>
+																																										<table x="15" y="130" name="customer_status">
+																																											<row name="id" null="1" autoincrement="1">
+																																												<datatype>INTEGER</datatype>
+																																												<default>NULL</default><relation table="customers" row="customer_status_id" />
+																																											</row>
+																																											<row name="name" null="1" autoincrement="0">
+																																												<datatype>VARCHAR</datatype>
+																																												<default>NULL</default></row>
+																																												<key type="PRIMARY" name="">
+																																													<part>id</part>
+																																												</key>
+																																											</table>
+																																											<table x="468" y="94" name="tickets">
+																																												<row name="id" null="1" autoincrement="1">
+																																													<datatype>INTEGER</datatype>
+																																													<default>NULL</default></row>
+																																													<row name="customer_id" null="1" autoincrement="0">
+																																														<datatype>INTEGER</datatype>
+																																														<default>NULL</default></row>
+																																														<row name="from_city_id" null="1" autoincrement="0">
+																																															<datatype>INTEGER</datatype>
+																																															<default>NULL</default></row>
+																																															<row name="to_city_id" null="1" autoincrement="0">
+																																																<datatype>INTEGER</datatype>
+																																																<default>NULL</default></row>
+																																																<row name="type_cargo_id" null="1" autoincrement="0">
+																																																	<datatype>INTEGER</datatype>
+																																																	<default>NULL</default></row>
+																																																	<row name="masa" null="1" autoincrement="0">
+																																																		<datatype>INTEGER</datatype>
+																																																		<default>NULL</default></row>
+																																																		<row name="summa" null="1" autoincrement="0">
+																																																			<datatype>INTEGER</datatype>
+																																																			<default>NULL</default></row>
+																																																			<row name="description" null="1" autoincrement="0">
+																																																				<datatype>MEDIUMTEXT</datatype>
+																																																				<default>NULL</default></row>
+																																																				<row name="status" null="1" autoincrement="0">
+																																																					<datatype>INTEGER</datatype>
+																																																					<default>NULL</default><comment>-1: в процесі, 1-виконано, 0 - невиконано</comment>
+																																																				</row>
+																																																				<key type="PRIMARY" name="">
+																																																					<part>id</part>
+																																																					<part>customer_id</part>
+																																																					<part>from_city_id</part>
+																																																					<part>to_city_id</part>
+																																																					<part>type_cargo_id</part>
+																																																				</key>
+																																																				<comment>заявки</comment>
+																																																			</table>
+																																																		</sql>
