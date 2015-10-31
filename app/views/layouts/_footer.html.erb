@@ -35,8 +35,10 @@
                               <% Article.block.each do |a|%>
                                 <li>
                                     <p>
+                                      <% if a.present? %>
                                       <%= article_link a %>
                                       <span><%= a.created_at_date %></span>
+                                      <% end %>
                                     </p>
                                 </li>
                                 <% end %>

@@ -46,6 +46,10 @@ class Admin::AuctionController < AdminController
   	@auction = Auction.find_by(id: params[:id])
   	if @auction.destroy
   		flash[:notice] = 'Знищено запис'
+  		articles=Article.where(auction_enable:1, auction_id: params[:id])
+  		articles.each do |a|
+  		    a.destroy
+  		end
   	end
     redirect_to admin_auction_index_path
   end

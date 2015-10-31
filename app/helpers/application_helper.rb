@@ -64,11 +64,15 @@ def bootstrap_icon(type)
   end
 
 def article_title(article)
+    logger.debug article.inspect
+
   if article.auction_enable
+    if article.auction.present?
     article.auction.name
-  else
+    end
+ else
     article.title
-  end
+ end
 end
 
 def article_content(article,preview=false)
@@ -97,7 +101,9 @@ def article_url(article)
   unless article.auction_enable
     article_path(article)
   else
+    if article.auction.present?
     auction_path(article.auction.id)
+    end
   end
 end
 
