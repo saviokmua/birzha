@@ -21,7 +21,7 @@ development:
   pool: 5
   username: birzha
   password: ",sh;f"
-  host: localhost
+  host: birzha.km.ua
 
 
 # Warning: The database defined as "test" will be erased and

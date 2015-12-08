@@ -23,19 +23,19 @@
 
 
 $(document).ready(function () {
-$("#new_feedback").validate({
-debug: true,
-rules: {
-"feedback[name]": {required: true},
-"feedback[email]": {required: true, email: true},
-}
-});
+  $("#new_feedback").validate({
+    debug: true,
+    rules: {
+      "feedback[name]": {required: true},
+      "feedback[email]": {required: true, email: true},
+    }
+  });
 });
 
-  
-  function auction_enable(){
+
+function auction_enable(){
   $('.auction_enable').on('click',function(){
-    
+
     $( ".auction_id" ).toggle();
     $( ".content" ).toggle();
 
@@ -55,10 +55,10 @@ function form_search_order(){
 
 
 
-  function feedback_valid() {
-    
-    $("#new_feedback").validate();
-  };
+function feedback_valid() {
+
+  $("#new_feedback").validate();
+};
 
 
 $(document).bind('page:change', function() {
@@ -73,16 +73,13 @@ $(document).ready(form_search_order);
 $(document).on('page:load', form_search_order);
 
 $(document).on("page:load ready", function(){
-    
-    $('.bootstrap_form-datetimepicker').datepicker(
-{
+
+  $('.bootstrap_form-datetimepicker').datepicker(
+  {
     isRTL: false,
     format: 'dd.mm.yyyy',
     autoclose:true,
     language: 'uk'
-}
+  });
 
-
-
-      );
 });

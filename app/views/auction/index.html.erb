@@ -12,26 +12,25 @@
                 </div><!-- end .row -->
                 
             </div><!-- end #page-header -->
-      
+        
 
+<table class="table-bordered table-striped alt">
+<thead>
+<tr>    
+    <th width="30%">Біржові аукціони</th>
+    <th width="100px">Дата проведення</th>
+    <th>Подробиці аукціону</th>
+</tr> 
+</thead>   
 <% @auctions.each do |a| %>
-<div class="row">
-
-    <div class="span12">
-        <h3 class="headline" style="margin-bottom: 5px;">
-            <span><%= link_to a.name,auction_path(a) %></span>
-        </h3>
-        <div class="span4">
-          <ul class="circle">
-            <li>Дата проведення торгів: <%= a.started_at_date %></li>
-            <li>Ціна: <%= "%.2f" % a.cina %> грн.</li>
-          </ul>
-          <%= link_to "Читати далі", auction_path(a.id), class: "btn btn-green-dark" %>
-        </div>
-    </div>
-    
-</div>
-<br>
+<tr>
+   <td><%= link_to a.name,auction_path(a) %></td>
+   <td><h2><%= a.started_time_at %></h2><%= a.started_at_date %></td>
+   <td><%= a.details.html_safe() if a.details.present? %><br>
+        Початкова ціна продажу: <%= "%.2f" % a.cina %> грн.
+   </td>    
+</tr>
 <% end %>
+</table>
 <%= will_paginate @auctions, previous_label: "Назад",next_label: "Вперед" %>
     <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->

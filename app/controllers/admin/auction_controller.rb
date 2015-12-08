@@ -67,7 +67,7 @@ def file_destroy
 private
 
   def auction_params
-      params.require(:auction).permit(:name,:started_at,:category_id,:status_id,:cina)
+      params.require(:auction).permit(:name,:started_at,:started_time_at,:category_id,:status_id,:cina,:content,:details)
   end
 
   def file_upload id

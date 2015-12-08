@@ -1,17 +1,28 @@
   <%= f.text_field :name, label: "Назва" %>
   <%= f.datetime_picker :started_at, label: "Дата проведення", readonly: true, format: "%d.%m.%Y",datetimepicker_format: "YYYY-MM-SS"  %>
-   
-   <%= f.collection_select :category_id, Category.all, :id, :name,  {label: "Категорія", prompt: "Виберіть категорію"}  %>
-   <%= f.collection_select :status_id, Status.all, :id, :name,  {label: "Статус", prompt: "Виберіть статус"}  %>
-  <% if @auction.filename.present? %>
-  <div class="auction_file">
+  <%= f.text_field :started_time_at, label: "Час проведення", readonly: false, class: "timepicker"  %>
+
+  <%= f.collection_select :category_id, Category.all, :id, :name,  {label: "Категорія", prompt: "Виберіть категорію"}  %>
+  <%= f.collection_select :status_id, Status.all, :id, :name,  {label: "Статус", prompt: "Виберіть статус"}  %>
+
+  <div class="form-group">
+   <label class="control-label required" for="auction_details">Подробиці</label>
+   <%= f.cktext_area :details, ckeditor: { language: 'uk',height: 200 }, class: "ckeditor", label: "Деталі" %>
+ </div>
+ <div class="form-group">
+   <label class="control-label required" for="auction_details">Текст</label>
+   <%= f.cktext_area :content, ckeditor: { language: 'uk',height: 400 }, class: "ckeditor" %>
+ </div>
+ <br>
+ <% if @auction.filename.present? %>
+ <div class="auction_file">
   <%= link_to @auction.filename_origin,download_auction_path(@auction.id) %>
   <%= link_to 'Delete',admin_auction_file_path(@auction),  remote: true, method: :delete,  data: {confirm: "Знищити файл?"}, class: 'auction_delete_file' %>
 </div>
-  <% end %>
+<% end %>
 
-  <%= f.file_field :file,{label: "Новий файл", prompt: "Виберіть файл"} %>
+<%= f.file_field :file,{label: "Новий файл", prompt: "Виберіть файл"} %>
 
-   <%= f.text_field :cina, label: "Ціна" %>
-  <%= f.submit " Зберегти ", class: "btn btn-success" %>
-  <%= link_to " Назад ", admin_auction_index_path, class: "btn btn-danger" %>
+<%= f.text_field :cina, label: "Ціна" %>
+<%= f.submit " Зберегти ", class: "btn btn-success" %>
+<%= link_to " Назад ", admin_auction_index_path, class: "btn btn-danger" %>

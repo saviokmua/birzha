@@ -21,6 +21,7 @@ gem 'active_attr', '0.8.5'
 gem 'rails-i18n'
 gem 'bootstrap_form-datetimepicker'
 
+
 #gem 'settingslogic'
 #gem 'rails-settings'
 gem 'mail'
